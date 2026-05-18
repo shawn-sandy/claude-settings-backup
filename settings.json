@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_CODE_NEW_INIT": "1",
+    "CLAUDE_CODE_NO_FLICKER": "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(agent-browser:*)",
+      "mcp__pencil"
+    ],
+    "deny": [
+      "Read(*.env)",
+      "Bash(rm:*)",
+      "Bash(curl:*)"
+    ],
+    "ask": [],
+    "defaultMode": "plan"
+  },
+  "model": "opusplan",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "INPUT=$(cat); if echo \"$INPUT\" | jq -r '.tool_input.command' 2>/dev/null | grep -q 'git commit'; then BRANCH=$(git branch --show-current 2>/dev/null); if [ \"$BRANCH\" = 'main' ] || [ \"$BRANCH\" = 'primary' ] || [ \"$BRANCH\" = 'master' ]; then echo \"WARNING: You are on the $BRANCH branch. Switch to a feature branch before committing.\" >&2; exit 1; fi; UNSTAGED=$(git diff --name-only 2>/dev/null | wc -l | tr -d ' '); UNTRACKED=$(git ls-files --others --exclude-standard 2>/dev/null | wc -l | tr -d ' '); if [ \"$UNSTAGED\" -gt 0 ] || [ \"$UNTRACKED\" -gt 0 ]; then echo \"Note: $UNSTAGED unstaged changes, $UNTRACKED untracked files. Stage specific files rather than using git add -A.\"; fi; fi",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "INPUT=$(cat); if echo \"$INPUT\" | jq -r '.tool_input.command' 2>/dev/null | grep -q 'npm publish'; then BRANCH=$(git branch --show-current 2>/dev/null); if [ \"$BRANCH\" = 'main' ] || [ \"$BRANCH\" = 'primary' ] || [ \"$BRANCH\" = 'master' ]; then echo \"WARNING: Do not publish from the $BRANCH branch. Use a release branch.\" >&2; exit 1; fi; NPM_USER=$(npm whoami 2>&1); if echo \"$NPM_USER\" | grep -qi 'error\\|unauthorized\\|ENEEDAUTH'; then echo \"ERROR: npm auth failed ($NPM_USER). Run npm login first.\" >&2; exit 1; fi; echo \"npm auth OK as $NPM_USER, branch OK.\"; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=$(jq -r '.tool_input.file_path' 2>/dev/null); [ -n \"$FILE\" ] && [ \"$FILE\" != 'null' ] && prettier --write --ignore-unknown \"$FILE\" 2>/dev/null; true",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); dir=$(basename \"$(echo \"$input\" | jq -r '.workspace.current_dir')\"); model=$(echo \"$input\" | jq -r '.model.display_name'); used=$(echo \"$input\" | jq -r '.context_window.used_percentage // empty'); ctx=\"\"; if [ -n \"$used\" ]; then pct=$(printf '%.0f' \"$used\"); filled=$(( pct * 10 / 100 )); empty=$(( 10 - filled )); bar=\"\"; i=0; while [ $i -lt $filled ]; do bar=\"${bar}█\"; i=$(( i + 1 )); done; i=0; while [ $i -lt $empty ]; do bar=\"${bar}░\"; i=$(( i + 1 )); done; ctx=\" | [${bar}] ${pct}%\"; fi; printf '\\033[2m%s | %s%s\\033[0m' \"$dir\" \"$model\" \"$ctx\""
+  },
+  "enabledPlugins": {
+    "feature-dev@claude-code-plugins": true,
+    "frontend-design@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "supabase@claude-plugins-official": true,
+    "agent-sdk-dev@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "explanatory-output-style@claude-plugins-official": true,
+    "hookify@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "plugin-dev@claude-code-plugins": true,
+    "commit-commands@claude-plugins-official": true,
+    "codex@openai-codex": true,
+    "warp@claude-code-warp": false,
+    "acss-kit@agentic-acss-plugins": true,
+    "agent-creator@agentics-kit": true,
+    "agentic-plugin-dev@agentics-kit": true,
+    "code-review@agentics-kit": true,
+    "code-testing-agent@agentics-kit": true,
+    "git-agent@agentics-kit": true,
+    "marketplace-builder@agentics-kit": true,
+    "plan-interview@agentics-kit": true,
+    "react-perf-analyzer@agentics-kit": true,
+    "skill-reviewer@agentics-kit": true,
+    "wcag-compliance-reviewer@agentics-kit": true,
+    "code-simplifier@agentics-kit": true,
+    "memory-tools@agentics-kit": true,
+    "acss-utilities@agentic-acss-plugins": true,
+    "playwright@claude-plugins-official": true,
+    "claude-api@anthropic-agent-skills": true,
+    "document-skills@anthropic-agent-skills": true,
+    "style-agent@agentic-acss-plugins": true,
+    "code-review@claude-code-plugins": true,
+    "security-guidance@claude-code-plugins": true,
+    "impeccable@impeccable": true,
+    "agent-reviewer@agentics-kit": true,
+    "product-plans@agentics-kit": true,
+    "settings-sync@agentics-kit": true
+  },
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "claude-code-warp": {
+      "source": {
+        "source": "github",
+        "repo": "warpdotdev/claude-code-warp"
+      }
+    },
+    "agentic-acss-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "shawn-sandy/agentic-acss-plugins"
+      },
+      "autoUpdate": true
+    },
+    "agentics-kit": {
+      "source": {
+        "source": "github",
+        "repo": "shawn-sandy/agentics"
+      },
+      "autoUpdate": true
+    },
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "showClearContextOnPlanAccept": true,
+  "plansDirectory": "./docs/plans",
+  "tui": "fullscreen",
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "theme": "dark-ansi",
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true,
+  "voiceEnabled": true,
+  "feedbackSurveyState": {
+    "lastShownTime": 1754075223053
+  }
+}

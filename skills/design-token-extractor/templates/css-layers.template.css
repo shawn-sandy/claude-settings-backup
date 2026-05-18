@@ -1,0 +1,348 @@
+/**
+ * Design Tokens - CSS with Cascade Layers
+ * Generated from design system analysis
+ *
+ * Layer order: reset → tokens → components → utilities
+ * Lower layers have lower priority, regardless of specificity
+ */
+
+/* ========================================
+   Layer Declaration
+   ======================================== */
+
+@layer reset, tokens, components, utilities;
+
+/* ========================================
+   Reset Layer
+   ======================================== */
+
+@layer reset {
+  /* Box sizing */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* Remove default margins */
+  body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+    margin: 0;
+  }
+
+  /* Set core body defaults */
+  body {
+    min-block-size: 100vh;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+  }
+
+  /* Make images easier to work with */
+  img, picture, svg {
+    max-inline-size: 100%;
+    display: block;
+  }
+
+  /* Inherit fonts for form elements */
+  input, button, textarea, select {
+    font: inherit;
+  }
+}
+
+/* ========================================
+   Tokens Layer
+   ======================================== */
+
+@layer tokens {
+  :root {
+    /* ===== Color Tokens ===== */
+
+    /* Primary Colors */
+    --color-primary-50: {{COLOR_PRIMARY_50}};
+    --color-primary-100: {{COLOR_PRIMARY_100}};
+    --color-primary-500: {{COLOR_PRIMARY_500}};
+    --color-primary-900: {{COLOR_PRIMARY_900}};
+
+    /* Neutral Colors */
+    --color-neutral-50: {{COLOR_NEUTRAL_50}};
+    --color-neutral-500: {{COLOR_NEUTRAL_500}};
+    --color-neutral-900: {{COLOR_NEUTRAL_900}};
+
+    /* Semantic Color Aliases */
+    --color-text-primary: var(--color-neutral-900);
+    --color-text-secondary: var(--color-neutral-500);
+    --color-background: var(--color-neutral-50);
+    --color-surface: #ffffff;
+
+    /* ===== Typography Tokens ===== */
+
+    /* Font Families */
+    --font-family-display: {{FONT_FAMILY_DISPLAY}}, system-ui, sans-serif;
+    --font-family-body: {{FONT_FAMILY_BODY}}, system-ui, sans-serif;
+    --font-family-mono: {{FONT_FAMILY_MONO}}, monospace;
+
+    /* Font Sizes */
+    --font-size-xs: {{FONT_SIZE_XS}};
+    --font-size-sm: {{FONT_SIZE_SM}};
+    --font-size-base: {{FONT_SIZE_BASE}};
+    --font-size-lg: {{FONT_SIZE_LG}};
+    --font-size-xl: {{FONT_SIZE_XL}};
+
+    /* Fluid Font Sizes */
+    --font-size-fluid-sm: clamp(0.875rem, 1.5cqi, 1rem);
+    --font-size-fluid-md: clamp(1rem, 2.5cqi, 1.5rem);
+    --font-size-fluid-lg: clamp(1.25rem, 3.5cqi, 2rem);
+
+    /* Font Weights */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Line Heights */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+
+    /* ===== Spacing Tokens ===== */
+
+    /* Spacing Scale */
+    --spacing-scale-xs: {{SPACING_XS}};
+    --spacing-scale-sm: {{SPACING_SM}};
+    --spacing-scale-md: {{SPACING_MD}};
+    --spacing-scale-lg: {{SPACING_LG}};
+    --spacing-scale-xl: {{SPACING_XL}};
+
+    /* Fluid Spacing */
+    --spacing-fluid-xs: clamp(0.25rem, 1cqi, 0.5rem);
+    --spacing-fluid-sm: clamp(0.5rem, 2cqi, 1rem);
+    --spacing-fluid-md: clamp(1rem, 3cqi, 2rem);
+    --spacing-fluid-lg: clamp(2rem, 5cqi, 4rem);
+
+    /* Container Padding */
+    --container-padding-inline: clamp(1rem, 4cqi, 2rem);
+
+    /* ===== Dimension Tokens ===== */
+
+    /* Border Radius */
+    --border-radius-none: 0;
+    --border-radius-sm: {{BORDER_RADIUS_SM}};
+    --border-radius-md: {{BORDER_RADIUS_MD}};
+    --border-radius-lg: {{BORDER_RADIUS_LG}};
+    --border-radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 {{SHADOW_COLOR}};
+    --shadow-md: 0 4px 6px -1px {{SHADOW_COLOR}};
+    --shadow-lg: 0 10px 15px -3px {{SHADOW_COLOR}};
+
+    /* ===== Motion Tokens ===== */
+
+    /* Durations */
+    --duration-fast: {{DURATION_FAST}};
+    --duration-normal: {{DURATION_NORMAL}};
+    --duration-slow: {{DURATION_SLOW}};
+
+    /* Easing Functions */
+    --easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --easing-enter: cubic-bezier(0.0, 0.0, 0.2, 1);
+    --easing-exit: cubic-bezier(0.4, 0.0, 1, 1);
+
+    /* ===== Accessibility Tokens ===== */
+
+    /* Focus Indicators */
+    --focus-ring-color: #0066cc;
+    --focus-ring-width: 2px;
+    --focus-ring-offset: 2px;
+    --focus-ring-style: solid;
+
+    /* Touch Targets */
+    --touch-target-min: 24px;
+    --touch-target-comfortable: 44px;
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --duration-fast: 0ms;
+      --duration-normal: 0ms;
+      --duration-slow: 0ms;
+    }
+  }
+
+  /* High Contrast Mode Support */
+  @media (forced-colors: active) {
+    :root {
+      --color-text-primary: CanvasText;
+      --color-background: Canvas;
+      --focus-ring-color: Highlight;
+    }
+  }
+}
+
+/* ========================================
+   Components Layer
+   ======================================== */
+
+@layer components {
+  /* Example component using design tokens */
+  .card {
+    container-type: inline-size;
+    container-name: card;
+
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    padding-inline: var(--container-padding-inline);
+    padding-block: var(--spacing-scale-md);
+  }
+
+  @container card (inline-size > 400px) {
+    .card {
+      --card-columns: 2;
+      display: grid;
+      grid-template-columns: repeat(var(--card-columns), 1fr);
+      gap: var(--spacing-scale-md);
+    }
+  }
+
+  /* Button component */
+  .button {
+    /* Container for responsive sizing */
+    container-type: inline-size;
+
+    /* Design tokens */
+    background-color: var(--color-primary-500);
+    color: var(--color-surface);
+    font-family: var(--font-family-body);
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--border-radius-sm);
+    padding-inline: var(--spacing-scale-md);
+    min-block-size: var(--touch-target-comfortable);
+
+    /* Interaction */
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--easing-standard);
+
+    &:hover {
+      background-color: var(--color-primary-900);
+    }
+
+    &:focus-visible {
+      outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+      outline-offset: var(--focus-ring-offset);
+    }
+  }
+
+  /* Content container */
+  .content {
+    margin-inline: auto;
+    padding-block: var(--spacing-scale-lg);
+    padding-inline: var(--spacing-fluid-md);
+    inline-size: min(100%, 70ch);
+  }
+
+  /* Typography components */
+  .heading {
+    font-family: var(--font-family-display);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
+  }
+
+  .body-text {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+  }
+}
+
+/* ========================================
+   Utilities Layer
+   ======================================== */
+
+@layer utilities {
+  /* ============================================
+     AUTO-GENERATED UTILITIES
+     These utilities are generated from design tokens using the
+     generate_utilities.py script. They provide comprehensive
+     Tailwind-style atomic utilities for rapid prototyping.
+
+     To generate utilities:
+     python scripts/generate_utilities.py --input tokens.json --output utilities.css
+
+     To include generated utilities here, use the 'css-layers-full' format
+     in transform_tokens.py
+     ============================================ */
+{{GENERATED_UTILITIES}}
+
+  /* ============================================
+     CUSTOM PROJECT UTILITIES
+     Add project-specific utilities below that aren't auto-generated
+     from tokens. These utilities integrate seamlessly with the
+     cascade layer system.
+     ============================================ */
+
+  /* Semantic text utilities */
+  .text-primary {
+    color: var(--color-text-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  /* Example spacing utilities (auto-generated utilities cover most cases) */
+  .p-xs { padding: var(--spacing-scale-xs); }
+  .p-sm { padding: var(--spacing-scale-sm); }
+  .p-md { padding: var(--spacing-scale-md); }
+  .p-lg { padding: var(--spacing-scale-lg); }
+
+  .m-xs { margin: var(--spacing-scale-xs); }
+  .m-sm { margin: var(--spacing-scale-sm); }
+  .m-md { margin: var(--spacing-scale-md); }
+  .m-lg { margin: var(--spacing-scale-lg); }
+
+  /* Logical property utilities */
+  .mx-auto {
+    margin-inline: auto;
+  }
+
+  .px-md {
+    padding-inline: var(--spacing-scale-md);
+  }
+
+  .py-md {
+    padding-block: var(--spacing-scale-md);
+  }
+
+  /* Typography utilities */
+  .font-display {
+    font-family: var(--font-family-display);
+  }
+
+  .font-body {
+    font-family: var(--font-family-body);
+  }
+
+  .font-mono {
+    font-family: var(--font-family-mono);
+  }
+
+  .text-xs { font-size: var(--font-size-xs); }
+  .text-sm { font-size: var(--font-size-sm); }
+  .text-base { font-size: var(--font-size-base); }
+  .text-lg { font-size: var(--font-size-lg); }
+  .text-xl { font-size: var(--font-size-xl); }
+
+  /* Border radius utilities */
+  .rounded-none { border-radius: var(--border-radius-none); }
+  .rounded-sm { border-radius: var(--border-radius-sm); }
+  .rounded-md { border-radius: var(--border-radius-md); }
+  .rounded-lg { border-radius: var(--border-radius-lg); }
+  .rounded-full { border-radius: var(--border-radius-full); }
+
+  /* Shadow utilities */
+  .shadow-sm { box-shadow: var(--shadow-sm); }
+  .shadow-md { box-shadow: var(--shadow-md); }
+  .shadow-lg { box-shadow: var(--shadow-lg); }
+}

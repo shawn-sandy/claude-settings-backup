@@ -1,0 +1,427 @@
+/**
+ * Design System Utilities
+ * Auto-generated atomic utility classes from design tokens
+ *
+ * This file contains Tailwind-style atomic utilities organized in cascade layers.
+ * Each utility is a single-purpose class that applies one specific style.
+ *
+ * Organization:
+ * - utilities.colors: Color utilities (text, background, border, fill, stroke)
+ * - utilities.spacing: Spacing utilities with logical properties
+ * - utilities.typography: Typography utilities (font, size, weight)
+ * - utilities.layout: Layout utilities (border-radius, shadows, dimensions)
+ * - utilities.variants: Responsive and state variants
+ *
+ * Usage:
+ * <div class="bg-primary-500 p-md rounded-lg shadow-md hover:bg-primary-600">
+ *   Utility-first component
+ * </div>
+ */
+
+/* ========================================
+   Layer Declaration
+   ======================================== */
+
+@layer utilities.colors,
+       utilities.spacing,
+       utilities.typography,
+       utilities.layout,
+       utilities.variants;
+
+/* ========================================
+   Color Utilities
+   ======================================== */
+
+@layer utilities.colors {
+  /**
+   * Text Color Utilities
+   * Apply color to text content
+   *
+   * Usage: <p class="text-primary-500">Colored text</p>
+   */
+{{TEXT_COLOR_UTILITIES}}
+
+  /**
+   * Background Color Utilities
+   * Apply background color to elements
+   *
+   * Usage: <div class="bg-neutral-100">Background</div>
+   */
+{{BACKGROUND_COLOR_UTILITIES}}
+
+  /**
+   * Border Color Utilities
+   * Apply border color to elements
+   *
+   * Usage: <div class="border-accent-500">Bordered</div>
+   */
+{{BORDER_COLOR_UTILITIES}}
+
+  /**
+   * Fill Color Utilities (SVG)
+   * Apply fill color to SVG elements
+   *
+   * Usage: <svg class="fill-primary-500">...</svg>
+   */
+{{FILL_COLOR_UTILITIES}}
+
+  /**
+   * Stroke Color Utilities (SVG)
+   * Apply stroke color to SVG elements
+   *
+   * Usage: <svg class="stroke-neutral-900">...</svg>
+   */
+{{STROKE_COLOR_UTILITIES}}
+}
+
+/* ========================================
+   Spacing Utilities
+   ======================================== */
+
+@layer utilities.spacing {
+  /**
+   * Padding Utilities - All Sides
+   * Apply padding to all sides
+   *
+   * Uses logical properties for better i18n support
+   * Usage: <div class="p-md">Padded element</div>
+   */
+{{PADDING_ALL_UTILITIES}}
+
+  /**
+   * Padding Utilities - Inline (Horizontal)
+   * Apply padding to inline axis (left/right in LTR)
+   *
+   * Usage: <div class="px-lg">Horizontal padding</div>
+   */
+{{PADDING_INLINE_UTILITIES}}
+
+  /**
+   * Padding Utilities - Block (Vertical)
+   * Apply padding to block axis (top/bottom)
+   *
+   * Usage: <div class="py-sm">Vertical padding</div>
+   */
+{{PADDING_BLOCK_UTILITIES}}
+
+  /**
+   * Padding Utilities - Individual Sides
+   * Apply padding to specific sides using logical properties
+   *
+   * Usage:
+   *   <div class="pt-md">Top padding</div>
+   *   <div class="pr-lg">Right padding (inline-end)</div>
+   */
+{{PADDING_INDIVIDUAL_UTILITIES}}
+
+  /**
+   * Margin Utilities - All Sides
+   * Apply margin to all sides
+   *
+   * Usage: <div class="m-md">Margin element</div>
+   */
+{{MARGIN_ALL_UTILITIES}}
+
+  /**
+   * Margin Utilities - Inline (Horizontal)
+   * Apply margin to inline axis
+   *
+   * Usage:
+   *   <div class="mx-lg">Horizontal margin</div>
+   *   <div class="mx-auto">Centered element</div>
+   */
+{{MARGIN_INLINE_UTILITIES}}
+
+  /**
+   * Margin Utilities - Block (Vertical)
+   * Apply margin to block axis
+   *
+   * Usage: <div class="my-md">Vertical margin</div>
+   */
+{{MARGIN_BLOCK_UTILITIES}}
+
+  /**
+   * Margin Utilities - Individual Sides
+   * Apply margin to specific sides using logical properties
+   *
+   * Usage:
+   *   <div class="mt-lg">Top margin</div>
+   *   <div class="mb-sm">Bottom margin</div>
+   */
+{{MARGIN_INDIVIDUAL_UTILITIES}}
+
+  /**
+   * Gap Utilities
+   * Apply gap to flexbox and grid containers
+   *
+   * Usage:
+   *   <div class="gap-md">Equal row/column gap</div>
+   *   <div class="gap-x-lg">Column gap only</div>
+   *   <div class="gap-y-sm">Row gap only</div>
+   */
+{{GAP_UTILITIES}}
+}
+
+/* ========================================
+   Typography Utilities
+   ======================================== */
+
+@layer utilities.typography {
+  /**
+   * Font Family Utilities
+   * Apply font family to text
+   *
+   * Usage:
+   *   <h1 class="font-display">Display heading</h1>
+   *   <p class="font-body">Body text</p>
+   */
+{{FONT_FAMILY_UTILITIES}}
+
+  /**
+   * Font Size Utilities
+   * Apply font size to text
+   *
+   * Usage:
+   *   <h1 class="text-2xl">Large heading</h1>
+   *   <p class="text-base">Normal text</p>
+   */
+{{FONT_SIZE_UTILITIES}}
+
+  /**
+   * Font Weight Utilities
+   * Apply font weight to text
+   *
+   * Usage:
+   *   <strong class="font-bold">Bold text</strong>
+   *   <p class="font-medium">Medium weight</p>
+   */
+{{FONT_WEIGHT_UTILITIES}}
+
+  /**
+   * Line Height Utilities
+   * Apply line height to text
+   *
+   * Usage:
+   *   <p class="leading-tight">Tight line height</p>
+   *   <p class="leading-relaxed">Relaxed line height</p>
+   */
+{{LINE_HEIGHT_UTILITIES}}
+
+  /**
+   * Letter Spacing Utilities
+   * Apply letter spacing to text
+   *
+   * Usage:
+   *   <p class="tracking-wide">Wide letter spacing</p>
+   *   <p class="tracking-tight">Tight letter spacing</p>
+   */
+{{LETTER_SPACING_UTILITIES}}
+}
+
+/* ========================================
+   Layout Utilities
+   ======================================== */
+
+@layer utilities.layout {
+  /**
+   * Border Radius Utilities
+   * Apply border radius to elements
+   *
+   * Usage:
+   *   <div class="rounded-sm">Small radius</div>
+   *   <div class="rounded-full">Fully rounded (pill/circle)</div>
+   */
+{{BORDER_RADIUS_UTILITIES}}
+
+  /**
+   * Box Shadow Utilities
+   * Apply box shadow to elements
+   *
+   * Usage:
+   *   <div class="shadow-md">Medium shadow</div>
+   *   <div class="shadow-elevated">Elevated shadow</div>
+   */
+{{SHADOW_UTILITIES}}
+
+  /**
+   * Width Utilities
+   * Apply width to elements
+   *
+   * Usage:
+   *   <div class="w-full">Full width</div>
+   *   <div class="w-md">Medium width</div>
+   */
+{{WIDTH_UTILITIES}}
+
+  /**
+   * Height Utilities
+   * Apply height to elements
+   *
+   * Usage:
+   *   <div class="h-screen">Full viewport height</div>
+   *   <div class="h-lg">Large height</div>
+   */
+{{HEIGHT_UTILITIES}}
+}
+
+/* ========================================
+   Responsive & State Variants
+   ======================================== */
+
+@layer utilities.variants {
+  /**
+   * Container Query Variants
+   * Apply utilities at specific container sizes
+   *
+   * Breakpoints:
+   * - sm: 640px
+   * - md: 768px
+   * - lg: 1024px
+   * - xl: 1280px
+   *
+   * Usage:
+   *   <div class="text-base md:text-lg lg:text-xl">
+   *     Responsive text that grows with container
+   *   </div>
+   */
+{{CONTAINER_QUERY_VARIANTS}}
+
+  /**
+   * Hover State Variants
+   * Apply utilities on hover
+   *
+   * Usage:
+   *   <button class="bg-primary-500 hover:bg-primary-600">
+   *     Hover to change background
+   *   </button>
+   */
+{{HOVER_VARIANTS}}
+
+  /**
+   * Focus State Variants
+   * Apply utilities on focus
+   *
+   * Usage:
+   *   <input class="outline-gray-300 focus:outline-primary-500">
+   */
+{{FOCUS_VARIANTS}}
+
+  /**
+   * Active State Variants
+   * Apply utilities on active state (e.g., button press)
+   *
+   * Usage:
+   *   <button class="scale-100 active:scale-95">
+   *     Press for feedback
+   *   </button>
+   */
+{{ACTIVE_VARIANTS}}
+
+  /**
+   * Dark Mode Variants
+   * Apply utilities when user prefers dark mode
+   *
+   * Usage:
+   *   <div class="bg-white dark:bg-neutral-900 text-black dark:text-white">
+   *     Adapts to dark mode
+   *   </div>
+   */
+{{DARK_MODE_VARIANTS}}
+
+  /**
+   * Reduced Motion Variants
+   * Apply utilities when user prefers reduced motion
+   *
+   * Usage:
+   *   <div class="transition-all motion-safe:animate-none">
+   *     Respects motion preferences
+   *   </div>
+   */
+{{REDUCED_MOTION_VARIANTS}}
+
+  /**
+   * Forced Colors Variants
+   * Apply utilities in high contrast mode
+   *
+   * Usage:
+   *   <div class="forced-colors:border">
+   *     Ensures visibility in high contrast
+   *   </div>
+   */
+{{FORCED_COLORS_VARIANTS}}
+}
+
+/* ========================================
+   Accessibility Features
+   ======================================== */
+
+/**
+ * This stylesheet includes automatic accessibility support:
+ *
+ * 1. Reduced Motion: Respects prefers-reduced-motion preference
+ * 2. Forced Colors: Adapts to high contrast mode
+ * 3. Dark Mode: Supports prefers-color-scheme: dark
+ * 4. Logical Properties: Better i18n support (RTL languages)
+ * 5. Focus Visible: Proper focus indicators
+ *
+ * All utilities follow WCAG 2.2 Level AA guidelines.
+ */
+
+/* ========================================
+   Browser Support
+   ======================================== */
+
+/**
+ * Target Browsers:
+ * - Chrome/Edge: 88+ (container queries)
+ * - Firefox: 110+
+ * - Safari: 16+
+ *
+ * Progressive Enhancement:
+ * - Base utilities work in all browsers with custom property support
+ * - Container query variants gracefully degrade on older browsers
+ * - Cascade layers polyfill available if needed
+ */
+
+/* ========================================
+   Usage Examples
+   ======================================== */
+
+/**
+ * Utility-First Card Component:
+ *
+ * <article class="bg-white dark:bg-neutral-800
+ *                 p-lg rounded-lg shadow-md
+ *                 border-neutral-200 dark:border-neutral-700">
+ *   <h2 class="font-display text-2xl font-bold
+ *              text-neutral-900 dark:text-white mb-md">
+ *     Card Title
+ *   </h2>
+ *   <p class="text-base leading-relaxed
+ *             text-neutral-700 dark:text-neutral-300">
+ *     Card content with proper spacing and typography.
+ *   </p>
+ *   <button class="mt-lg px-lg py-md
+ *                  bg-primary-600 hover:bg-primary-700 active:scale-95
+ *                  text-white rounded-sm font-semibold
+ *                  focus:outline-accent-500">
+ *     Action Button
+ *   </button>
+ * </article>
+ *
+ *
+ * Responsive Grid Layout:
+ *
+ * <div class="grid gap-md md:gap-lg
+ *             grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+ *   <div class="p-md bg-neutral-50 dark:bg-neutral-800 rounded-md">
+ *     Item 1
+ *   </div>
+ *   <div class="p-md bg-neutral-50 dark:bg-neutral-800 rounded-md">
+ *     Item 2
+ *   </div>
+ *   <div class="p-md bg-neutral-50 dark:bg-neutral-800 rounded-md">
+ *     Item 3
+ *   </div>
+ * </div>
+ */

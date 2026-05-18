@@ -1,0 +1,144 @@
+/**
+ * Design Tokens - CSS Custom Properties
+ * Generated from design system analysis
+ */
+
+:root {
+  /* ========================================
+     Color Tokens
+     ======================================== */
+
+  /* Primary Colors */
+  --color-primary-50: {{COLOR_PRIMARY_50}};
+  --color-primary-100: {{COLOR_PRIMARY_100}};
+  --color-primary-500: {{COLOR_PRIMARY_500}};
+  --color-primary-900: {{COLOR_PRIMARY_900}};
+
+  /* Neutral Colors */
+  --color-neutral-50: {{COLOR_NEUTRAL_50}};
+  --color-neutral-500: {{COLOR_NEUTRAL_500}};
+  --color-neutral-900: {{COLOR_NEUTRAL_900}};
+
+  /* Semantic Colors (aliases) */
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-secondary: var(--color-neutral-500);
+  --color-background: var(--color-neutral-50);
+
+  /* ========================================
+     Typography Tokens
+     ======================================== */
+
+  /* Font Families */
+  --font-family-display: {{FONT_FAMILY_DISPLAY}}, system-ui, sans-serif;
+  --font-family-body: {{FONT_FAMILY_BODY}}, system-ui, sans-serif;
+  --font-family-mono: {{FONT_FAMILY_MONO}}, monospace;
+
+  /* Font Sizes */
+  --font-size-xs: {{FONT_SIZE_XS}};
+  --font-size-sm: {{FONT_SIZE_SM}};
+  --font-size-base: {{FONT_SIZE_BASE}};
+  --font-size-lg: {{FONT_SIZE_LG}};
+  --font-size-xl: {{FONT_SIZE_XL}};
+
+  /* Fluid Font Sizes (using clamp) */
+  --font-size-fluid-sm: clamp(0.875rem, 1.5cqi, 1rem);
+  --font-size-fluid-md: clamp(1rem, 2.5cqi, 1.5rem);
+  --font-size-fluid-lg: clamp(1.25rem, 3.5cqi, 2rem);
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ========================================
+     Spacing Tokens
+     ======================================== */
+
+  /* Spacing Scale */
+  --spacing-scale-xs: {{SPACING_XS}};
+  --spacing-scale-sm: {{SPACING_SM}};
+  --spacing-scale-md: {{SPACING_MD}};
+  --spacing-scale-lg: {{SPACING_LG}};
+  --spacing-scale-xl: {{SPACING_XL}};
+
+  /* Fluid Spacing (using clamp) */
+  --spacing-fluid-xs: clamp(0.25rem, 1cqi, 0.5rem);
+  --spacing-fluid-sm: clamp(0.5rem, 2cqi, 1rem);
+  --spacing-fluid-md: clamp(1rem, 3cqi, 2rem);
+  --spacing-fluid-lg: clamp(2rem, 5cqi, 4rem);
+
+  /* ========================================
+     Dimension Tokens
+     ======================================== */
+
+  /* Border Radius */
+  --border-radius-none: 0;
+  --border-radius-sm: {{BORDER_RADIUS_SM}};
+  --border-radius-md: {{BORDER_RADIUS_MD}};
+  --border-radius-lg: {{BORDER_RADIUS_LG}};
+  --border-radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 {{SHADOW_COLOR}};
+  --shadow-md: 0 4px 6px -1px {{SHADOW_COLOR}};
+  --shadow-lg: 0 10px 15px -3px {{SHADOW_COLOR}};
+
+  /* ========================================
+     Motion Tokens
+     ======================================== */
+
+  /* Durations */
+  --duration-fast: {{DURATION_FAST}};
+  --duration-normal: {{DURATION_NORMAL}};
+  --duration-slow: {{DURATION_SLOW}};
+
+  /* Easing Functions */
+  --easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --easing-enter: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --easing-exit: cubic-bezier(0.4, 0.0, 1, 1);
+
+  /* ========================================
+     Accessibility Tokens
+     ======================================== */
+
+  /* Focus Indicators */
+  --focus-ring-color: #0066cc;
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-style: solid;
+
+  /* Touch Targets */
+  --touch-target-min: 24px;
+  --touch-target-comfortable: 44px;
+}
+
+/* ========================================
+   Reduced Motion Support
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    /* Disable or minimize animations */
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+  }
+}
+
+/* ========================================
+   High Contrast Mode Support
+   ======================================== */
+
+@media (forced-colors: active) {
+  :root {
+    --color-text-primary: CanvasText;
+    --color-background: Canvas;
+    --focus-ring-color: Highlight;
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "color": {
+    "primary": {
+      "50": {
+        "$value": "{{COLOR_PRIMARY_50}}",
+        "$type": "color",
+        "$description": "Lightest primary color"
+      },
+      "100": {
+        "$value": "{{COLOR_PRIMARY_100}}",
+        "$type": "color",
+        "$description": "Very light primary color"
+      },
+      "500": {
+        "$value": "{{COLOR_PRIMARY_500}}",
+        "$type": "color",
+        "$description": "Primary brand color"
+      },
+      "900": {
+        "$value": "{{COLOR_PRIMARY_900}}",
+        "$type": "color",
+        "$description": "Darkest primary color"
+      }
+    },
+    "neutral": {
+      "50": {
+        "$value": "{{COLOR_NEUTRAL_50}}",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "{{COLOR_NEUTRAL_500}}",
+        "$type": "color"
+      },
+      "900": {
+        "$value": "{{COLOR_NEUTRAL_900}}",
+        "$type": "color"
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "{color.neutral.900}",
+        "$type": "color",
+        "$description": "Primary text color"
+      },
+      "secondary": {
+        "$value": "{color.neutral.500}",
+        "$type": "color",
+        "$description": "Secondary text color"
+      }
+    }
+  },
+  "fontFamily": {
+    "display": {
+      "$value": ["{{FONT_FAMILY_DISPLAY}}", "system-ui", "sans-serif"],
+      "$type": "fontFamily",
+      "$description": "Font family for headings and display text"
+    },
+    "body": {
+      "$value": ["{{FONT_FAMILY_BODY}}", "system-ui", "sans-serif"],
+      "$type": "fontFamily",
+      "$description": "Font family for body text"
+    },
+    "mono": {
+      "$value": ["{{FONT_FAMILY_MONO}}", "monospace"],
+      "$type": "fontFamily",
+      "$description": "Font family for code and monospace text"
+    }
+  },
+  "fontSize": {
+    "xs": {
+      "$value": "{{FONT_SIZE_XS}}",
+      "$type": "dimension",
+      "$description": "Extra small font size"
+    },
+    "sm": {
+      "$value": "{{FONT_SIZE_SM}}",
+      "$type": "dimension",
+      "$description": "Small font size"
+    },
+    "base": {
+      "$value": "{{FONT_SIZE_BASE}}",
+      "$type": "dimension",
+      "$description": "Base font size"
+    },
+    "lg": {
+      "$value": "{{FONT_SIZE_LG}}",
+      "$type": "dimension",
+      "$description": "Large font size"
+    },
+    "xl": {
+      "$value": "{{FONT_SIZE_XL}}",
+      "$type": "dimension",
+      "$description": "Extra large font size"
+    }
+  },
+  "fontWeight": {
+    "normal": {
+      "$value": "400",
+      "$type": "fontWeight",
+      "$description": "Normal font weight"
+    },
+    "medium": {
+      "$value": "500",
+      "$type": "fontWeight",
+      "$description": "Medium font weight"
+    },
+    "semibold": {
+      "$value": "600",
+      "$type": "fontWeight",
+      "$description": "Semi-bold font weight"
+    },
+    "bold": {
+      "$value": "700",
+      "$type": "fontWeight",
+      "$description": "Bold font weight"
+    }
+  },
+  "lineHeight": {
+    "tight": {
+      "$value": 1.25,
+      "$type": "number",
+      "$description": "Tight line height for headings"
+    },
+    "normal": {
+      "$value": 1.5,
+      "$type": "number",
+      "$description": "Normal line height for body text (WCAG compliant)"
+    },
+    "relaxed": {
+      "$value": 1.75,
+      "$type": "number",
+      "$description": "Relaxed line height for readability"
+    }
+  },
+  "spacing": {
+    "scale": {
+      "xs": {
+        "$value": "{{SPACING_XS}}",
+        "$type": "dimension",
+        "$description": "Extra small spacing"
+      },
+      "sm": {
+        "$value": "{{SPACING_SM}}",
+        "$type": "dimension",
+        "$description": "Small spacing"
+      },
+      "md": {
+        "$value": "{{SPACING_MD}}",
+        "$type": "dimension",
+        "$description": "Medium spacing"
+      },
+      "lg": {
+        "$value": "{{SPACING_LG}}",
+        "$type": "dimension",
+        "$description": "Large spacing"
+      },
+      "xl": {
+        "$value": "{{SPACING_XL}}",
+        "$type": "dimension",
+        "$description": "Extra large spacing"
+      }
+    }
+  },
+  "borderRadius": {
+    "none": {
+      "$value": "0",
+      "$type": "dimension",
+      "$description": "No border radius"
+    },
+    "sm": {
+      "$value": "{{BORDER_RADIUS_SM}}",
+      "$type": "dimension",
+      "$description": "Small border radius"
+    },
+    "md": {
+      "$value": "{{BORDER_RADIUS_MD}}",
+      "$type": "dimension",
+      "$description": "Medium border radius"
+    },
+    "lg": {
+      "$value": "{{BORDER_RADIUS_LG}}",
+      "$type": "dimension",
+      "$description": "Large border radius"
+    },
+    "full": {
+      "$value": "9999px",
+      "$type": "dimension",
+      "$description": "Fully rounded (circular)"
+    }
+  },
+  "shadow": {
+    "sm": {
+      "$value": {
+        "offsetX": "0px",
+        "offsetY": "1px",
+        "blur": "2px",
+        "spread": "0px",
+        "color": "{{SHADOW_COLOR}}"
+      },
+      "$type": "shadow",
+      "$description": "Small shadow"
+    },
+    "md": {
+      "$value": {
+        "offsetX": "0px",
+        "offsetY": "4px",
+        "blur": "6px",
+        "spread": "-1px",
+        "color": "{{SHADOW_COLOR}}"
+      },
+      "$type": "shadow",
+      "$description": "Medium shadow"
+    },
+    "lg": {
+      "$value": {
+        "offsetX": "0px",
+        "offsetY": "10px",
+        "blur": "15px",
+        "spread": "-3px",
+        "color": "{{SHADOW_COLOR}}"
+      },
+      "$type": "shadow",
+      "$description": "Large shadow"
+    }
+  },
+  "motion": {
+    "duration": {
+      "fast": {
+        "$value": "{{DURATION_FAST}}",
+        "$type": "duration",
+        "$description": "Fast animation duration"
+      },
+      "normal": {
+        "$value": "{{DURATION_NORMAL}}",
+        "$type": "duration",
+        "$description": "Normal animation duration"
+      },
+      "slow": {
+        "$value": "{{DURATION_SLOW}}",
+        "$type": "duration",
+        "$description": "Slow animation duration"
+      }
+    },
+    "easing": {
+      "standard": {
+        "$value": [0.4, 0.0, 0.2, 1],
+        "$type": "cubicBezier",
+        "$description": "Standard easing function"
+      },
+      "enter": {
+        "$value": [0.0, 0.0, 0.2, 1],
+        "$type": "cubicBezier",
+        "$description": "Enter animation easing"
+      },
+      "exit": {
+        "$value": [0.4, 0.0, 1, 1],
+        "$type": "cubicBezier",
+        "$description": "Exit animation easing"
+      }
+    }
+  }
+}
