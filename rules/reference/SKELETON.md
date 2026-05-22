@@ -3,6 +3,7 @@
 status: todo
 type: <feature|fix|refactor|docs|chore>
 created: YYYY-MM-DD
+repo-name: <repo-name>
 ---
 
 # Plan: <title>

@@ -84,7 +84,6 @@
     "wcag-compliance-reviewer@agentics-kit": true,
     "code-simplifier@agentics-kit": true,
     "memory-tools@agentics-kit": true,
-    "acss-utilities@agentic-acss-plugins": true,
     "playwright@claude-plugins-official": true,
     "claude-api@anthropic-agent-skills": true,
     "document-skills@anthropic-agent-skills": true,
