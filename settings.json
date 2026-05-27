@@ -47,6 +47,16 @@
             "timeout": 5
           }
         ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 $HOME/.claude/hooks/validate-plan-filename.py",
+            "timeout": 5
+          }
+        ]
       }
     ]
   },
@@ -93,7 +103,8 @@
     "impeccable@impeccable": true,
     "agent-reviewer@agentics-kit": true,
     "product-plans@agentics-kit": true,
-    "settings-sync@agentics-kit": true
+    "settings-sync@agentics-kit": true,
+    "code-share@agentics-kit": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -129,6 +140,7 @@
       }
     }
   },
+  "skillListingBudgetFraction": 0.25,
   "effortLevel": "high",
   "showClearContextOnPlanAccept": true,
   "plansDirectory": "./docs/plans",
@@ -140,9 +152,9 @@
   "theme": "dark-ansi",
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754075223053
-  },
-  "skipAutoPermissionPrompt": true
+  }
 }
