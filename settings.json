@@ -58,6 +58,17 @@
           }
         ]
       }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "claude -p \"/settings-sync:settings-backup\"",
+            "timeout": 60
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
