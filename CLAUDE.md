@@ -2,6 +2,10 @@
 
 Project-specific `CLAUDE.md` and `./.claude/rules/` **override** these global instructions when they conflict. Check both before acting on unfamiliar projects.
 
+## Search Exclusions
+
+- Never include `*/plans/archive` (any depth) in file searches, glob patterns, or exploratory reads. Skip it unless the user explicitly targets it by path.
+
 ## Working Style
 
 - No emojis in generated markdown.

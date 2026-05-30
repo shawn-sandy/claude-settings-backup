@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "skillListingBudgetFraction": 0.25,
   "env": {
     "CLAUDE_CODE_NEW_INIT": "1",
     "CLAUDE_CODE_NO_FLICKER": "1",
@@ -12,6 +13,7 @@
     ],
     "deny": [
       "Read(*.env)",
+      "Read(*/plans/archive/*)",
       "Bash(rm:*)",
       "Bash(curl:*)"
     ],
@@ -58,17 +60,6 @@
           }
         ]
       }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "claude -p \"/settings-sync:settings-backup\"",
-            "timeout": 60
-          }
-        ]
-      }
     ]
   },
   "statusLine": {
@@ -91,19 +82,13 @@
     "plugin-dev@claude-code-plugins": true,
     "commit-commands@claude-plugins-official": true,
     "codex@openai-codex": true,
-    "warp@claude-code-warp": false,
     "acss-kit@agentic-acss-plugins": true,
-    "agent-creator@agentics-kit": true,
-    "agentic-plugin-dev@agentics-kit": true,
     "code-review@agentics-kit": true,
     "code-testing-agent@agentics-kit": true,
     "git-agent@agentics-kit": true,
-    "marketplace-builder@agentics-kit": true,
     "plan-interview@agentics-kit": true,
-    "react-perf-analyzer@agentics-kit": true,
     "skill-reviewer@agentics-kit": true,
     "wcag-compliance-reviewer@agentics-kit": true,
-    "code-simplifier@agentics-kit": true,
     "memory-tools@agentics-kit": true,
     "playwright@claude-plugins-official": true,
     "claude-api@anthropic-agent-skills": true,
@@ -112,22 +97,19 @@
     "code-review@claude-code-plugins": true,
     "security-guidance@claude-code-plugins": true,
     "impeccable@impeccable": true,
-    "agent-reviewer@agentics-kit": true,
     "product-plans@agentics-kit": true,
     "settings-sync@agentics-kit": true,
-    "code-share@agentics-kit": true
+    "code-share@agentics-kit": true,
+    "plan-agent@agentics-kit": true,
+    "social-media-tools@agentics-kit": true,
+    "warp@claude-code-warp": true,
+    "issue-agent@agentics-kit": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
-      }
-    },
-    "claude-code-warp": {
-      "source": {
-        "source": "github",
-        "repo": "warpdotdev/claude-code-warp"
       }
     },
     "agentic-acss-plugins": {
@@ -149,9 +131,14 @@
         "source": "github",
         "repo": "pbakaus/impeccable"
       }
+    },
+    "claude-code-warp": {
+      "source": {
+        "source": "github",
+        "repo": "warpdotdev/claude-code-warp"
+      }
     }
   },
-  "skillListingBudgetFraction": 0.25,
   "effortLevel": "high",
   "showClearContextOnPlanAccept": true,
   "plansDirectory": "./docs/plans",
@@ -160,6 +147,7 @@
     "enabled": true,
     "mode": "hold"
   },
+  "skipWorkflowUsageWarning": true,
   "theme": "dark-ansi",
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
