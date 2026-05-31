@@ -9,7 +9,6 @@
   "permissions": {
     "allow": [
       "Bash(agent-browser:*)",
-      "mcp__pencil",
       "Bash(tree:*)",
       "Bash(git ls-files)",
       "Bash(git symbolic-ref refs/remotes/origin/HEAD *)",
@@ -79,7 +78,8 @@
       "Skill(plan-interview:plan-status)",
       "Bash(git ls-tree *)",
       "Skill(social-media-tools:social-share)",
-      "Skill(social-media-tools:share-blog)"
+      "Skill(social-media-tools:share-blog)",
+      "mcp__pencil"
     ],
     "deny": [
       "Read(*.env)",
