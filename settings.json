@@ -32,13 +32,9 @@
       "Skill(git-agent:ship:*)",
       "Bash(gh api:*)",
       "Bash(xargs -I {} cat {})",
-      "Skill(git-agent:commit-agent)",
-      "Skill(git-agent:commit-agent:*)",
       "Bash(git diff-tree:*)",
       "Bash(node \"/Users/shawnsandy/.claude/plugins/marketplaces/openai-codex/plugins/codex/scripts/codex-companion.mjs\" review \"\")",
       "Bash(echo \"EXIT: $?\")",
-      "Skill(commit-commands:commit)",
-      "Skill(commit-commands:commit:*)",
       "Bash(bash /Users/shawnsandy/devbox/agentics/tests/demo/run.sh)",
       "Bash(echo \"exit: $?\")",
       "Bash(python3 -c \"import json, sys; json.load\\(open\\('/Users/shawnsandy/devbox/agentics/.claude-plugin/marketplace.json'\\)\\); print\\('JSON valid'\\)\")",
@@ -55,7 +51,6 @@
       "Bash(bash *)",
       "Bash(gh pr *)",
       "Skill(product-plans:plan-review-agents)",
-      "Bash(git commit *)",
       "Bash(git fetch *)",
       "Bash(xargs -I {} git diff --name-only {} origin/main)",
       "Bash(git push *)",
@@ -87,7 +82,13 @@
       "Bash(rm:*)",
       "Bash(curl:*)"
     ],
-    "ask": [],
+    "ask": [
+      "Bash(git commit *)",
+      "Skill(git-agent:commit-agent)",
+      "Skill(git-agent:commit-agent:*)",
+      "Skill(commit-commands:commit)",
+      "Skill(commit-commands:commit:*)"
+    ],
     "defaultMode": "auto"
   },
   "model": "opusplan",
