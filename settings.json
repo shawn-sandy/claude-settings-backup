@@ -185,7 +185,8 @@
     "plan-agent@agentics-kit": true,
     "social-media-tools@agentics-kit": true,
     "warp@claude-code-warp": true,
-    "issue-agent@agentics-kit": true
+    "issue-agent@agentics-kit": true,
+    "supabase@supabase-agent-skills": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -218,6 +219,12 @@
       "source": {
         "source": "github",
         "repo": "warpdotdev/claude-code-warp"
+      }
+    },
+    "supabase-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "supabase/agent-skills"
       }
     }
   },
