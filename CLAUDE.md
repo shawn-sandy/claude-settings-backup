@@ -11,6 +11,7 @@ Project-specific `CLAUDE.md` and `./.claude/rules/` **override** these global in
 - No emojis in generated markdown.
 - Never autonomously start additional work after completing a requested task.
 - Never expand scope beyond the specified file or target.
+- Treat questions as exploration, not approval: answer or ask back, never implement.
 
 ## Git & PRs
 
