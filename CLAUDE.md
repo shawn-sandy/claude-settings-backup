@@ -15,6 +15,7 @@ Project-specific `CLAUDE.md` and `./.claude/rules/` **override** these global in
 
 ## Git & PRs
 
+- Unless otherwise specified, always pull the latest of the default branch from origin before starting any work.
 - Commit ALL modified files in a single commit unless explicitly told otherwise — do not leave uncommitted files requiring a second prompt.
 - Confirm not on a protected branch before committing.
 - Check if a feature branch is already merged before creating a PR.
