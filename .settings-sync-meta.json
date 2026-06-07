@@ -1,6 +1,6 @@
 {
   "hostname": "shawns-MacBook-Pro.local",
-  "timestamp": "2026-06-07T15:18:21Z",
-  "claudeVersion": "",
+  "timestamp": "2026-06-07T16:44:17Z",
+  "claudeVersion": "2.1.168 (Claude Code)",
   "filesIncluded": ["settings.json", "CLAUDE.md", "rules/", "commands/", "skills/"]
 }
