@@ -21,6 +21,35 @@ repo-name: <repo-name>
 1. <action> — *Why:* <reason>. *Verify:* <how to confirm>.
 2. <action> — *Why:* <reason>. *Verify:* <how to confirm>.
 
+## Tests
+
+> Tier: <1 (code-touching) | 2 (non-code)>
+
+### Objective-Verification Test
+
+- **File:** `<test file path>`
+- **Type:** mock/smoke test
+- **Asserts:** <what the test confirms about the plan's stated objective>
+- **Run:** `<test runner command>`
+
+### Unit Tests *(Tier 1 only — omit for Tier 2)*
+
+- **File:** `<test file path>`
+- **Targets:** <function/module under test>
+- **Key cases:** <what scenarios are covered>
+
+### Integration Tests *(Tier 1 only — omit for Tier 2)*
+
+- **File:** `<test file path>`
+- **Targets:** <modules/services exercised together>
+- **Key cases:** <what interactions are covered>
+
+### E2E Tests *(Tier 1 only — omit for Tier 2)*
+
+- **File:** `<test file path>`
+- **Targets:** <user flow driven through the running application>
+- **Key cases:** <what user scenarios are covered>
+
 ## Acceptance Criteria
 
 - [ ] <falsifiable condition that must be true for this plan to be done>
