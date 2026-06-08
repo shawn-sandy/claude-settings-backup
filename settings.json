@@ -198,7 +198,13 @@
     "warp@claude-code-warp": true,
     "issue-agent@agentics-kit": true,
     "supabase@supabase-agent-skills": true,
-    "postgres-best-practices@supabase-agent-skills": true
+    "postgres-best-practices@supabase-agent-skills": true,
+    "stitch-build@google-labs-code-stitch-skills": true,
+    "stitch-design@google-labs-code-stitch-skills": true,
+    "stitch-utilities@google-labs-code-stitch-skills": true,
+    "commit-commands@claude-code-plugins": true,
+    "frontend-design@claude-code-plugins": true,
+    "hookify@claude-code-plugins": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
