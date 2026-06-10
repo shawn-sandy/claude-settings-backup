@@ -82,13 +82,7 @@
       "Bash(rm:*)",
       "Bash(curl:*)"
     ],
-    "ask": [
-      "Bash(git commit *)",
-      "Skill(git-agent:commit-agent)",
-      "Skill(git-agent:commit-agent:*)",
-      "Skill(commit-commands:commit)",
-      "Skill(commit-commands:commit:*)"
-    ],
+    "ask": [],
     "defaultMode": "auto"
   },
   "model": "opusplan",
