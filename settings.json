@@ -204,7 +204,8 @@
     "stitch-utilities@google-labs-code-stitch-skills": true,
     "commit-commands@claude-code-plugins": true,
     "frontend-design@claude-code-plugins": true,
-    "hookify@claude-code-plugins": true
+    "hookify@claude-code-plugins": true,
+    "netlify-skills@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -257,11 +258,11 @@
   "skipWorkflowUsageWarning": true,
   "theme": "dark-ansi",
   "remoteControlAtStartup": true,
+  "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754075223053
-  },
-  "inputNeededNotifEnabled": true
+  }
 }
