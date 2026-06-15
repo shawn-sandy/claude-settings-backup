@@ -238,7 +238,7 @@
       }
     }
   },
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "showClearContextOnPlanAccept": true,
   "plansDirectory": "./docs/plans",
   "tui": "fullscreen",
