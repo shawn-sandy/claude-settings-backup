@@ -190,7 +190,6 @@
     "plan-agent@agentics-kit": true,
     "social-media-tools@agentics-kit": true,
     "warp@claude-code-warp": true,
-    "issue-agent@agentics-kit": true,
     "supabase@supabase-agent-skills": true,
     "postgres-best-practices@supabase-agent-skills": true,
     "commit-commands@claude-code-plugins": true,
