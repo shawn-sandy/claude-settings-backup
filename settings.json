@@ -196,7 +196,8 @@
     "frontend-design@claude-code-plugins": true,
     "hookify@claude-code-plugins": true,
     "netlify-skills@claude-plugins-official": true,
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "pr-review-toolkit@claude-code-plugins": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -241,6 +242,12 @@
       "source": {
         "source": "github",
         "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "anthropic-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills"
       }
     }
   },
