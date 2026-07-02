@@ -178,8 +178,6 @@
     "wcag-compliance-reviewer@agentics-kit": true,
     "memory-tools@agentics-kit": true,
     "playwright@claude-plugins-official": true,
-    "claude-api@anthropic-agent-skills": true,
-    "document-skills@anthropic-agent-skills": true,
     "style-agent@agentic-acss-plugins": true,
     "code-review@claude-code-plugins": true,
     "security-guidance@claude-code-plugins": true,
@@ -197,7 +195,8 @@
     "hookify@claude-code-plugins": true,
     "netlify-skills@claude-plugins-official": true,
     "ponytail@ponytail": true,
-    "pr-review-toolkit@claude-code-plugins": true
+    "pr-review-toolkit@claude-code-plugins": true,
+    "github@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
