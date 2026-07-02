@@ -196,7 +196,8 @@
     "netlify-skills@claude-plugins-official": true,
     "ponytail@ponytail": true,
     "pr-review-toolkit@claude-code-plugins": true,
-    "github@claude-plugins-official": true
+    "github@claude-plugins-official": true,
+    "document-skills@anthropic-agent-skills": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
