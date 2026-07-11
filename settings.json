@@ -85,7 +85,7 @@
     "ask": [],
     "defaultMode": "auto"
   },
-  "model": "opusplan",
+  "model": "claude-fable-5[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -262,6 +262,7 @@
   },
   "skipWorkflowUsageWarning": true,
   "theme": "dark-ansi",
+  "preferredNotifChannel": "iterm2",
   "remoteControlAtStartup": true,
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
