@@ -24,6 +24,26 @@ Project-specific `CLAUDE.md` and `./.claude/rules/` **override** these global in
 - Execute git operations directly — do not enter plan mode for git commands.
 - `git-agent` skills (`branch-agent`, `commit-agent`, `pr-agent`, `ship`) self-bootstrap out of plan mode via their own Step 0 (`ExitPlanMode`). Callers do not pre-check plan-mode state.
 
+## Git & Safety
+
+- Never delete a branch, run rm/mktemp/git clean, or execute other destructive commands without explicit user approval. "Merge it" does NOT authorize `--delete-branch`.
+
+## Workflow
+
+- When porting or referencing an existing fix, first confirm whether it has already landed on main (check merged PRs) before declaring it missing or re-implementing.
+
+## Generated Files / Build
+
+- Always use the repository's canonical generator/source-of-truth scripts to produce generated files (galleries, plugin tables, migrations); never hand-edit generated output or write ad-hoc parsing scripts.
+
+## Verification
+
+- After making a change, verify it in-browser across both light and dark themes before opening a PR, and add srcset/responsive checks for any image changes.
+
+## Response Style
+
+- Keep tool/agent responses concise and under output token limits; summarize instead of dumping large content.
+
 ## Planning
 
 When in plan mode, never implement until the user explicitly approves the plan.
