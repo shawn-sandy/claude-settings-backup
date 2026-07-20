@@ -39,6 +39,7 @@ Project-specific `CLAUDE.md` and `./.claude/rules/` **override** these global in
 ## Verification
 
 - After making a change, verify it in-browser across both light and dark themes before opening a PR, and add srcset/responsive checks for any image changes.
+- Run the full test suite and lint/type checks locally before opening a PR; do not rely on CI reviewers to catch regressions.
 
 ## Response Style
 

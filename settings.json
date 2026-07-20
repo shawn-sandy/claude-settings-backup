@@ -132,7 +132,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "FILE=$(jq -r '.tool_input.file_path' 2>/dev/null); [ -n \"$FILE\" ] && [ \"$FILE\" != 'null' ] && prettier --write --ignore-unknown \"$FILE\" 2>/dev/null; true",
+            "command": "FILE=$(jq -r '.tool_input.file_path' 2>/dev/null); [ -n \"$FILE\" ] && [ \"$FILE\" != 'null' ] && [ \"$(wc -l < \"$FILE\" 2>/dev/null || echo 0)\" -le 1000 ] && prettier --write --ignore-unknown \"$FILE\" 2>/dev/null; true",
             "timeout": 5
           }
         ]
