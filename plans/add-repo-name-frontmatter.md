@@ -9,28 +9,28 @@ repo-name: rules
 
 ## Context
 
-The current [plan-mode.md](../../plan-mode.md) rule requires three frontmatter fields on every plan: `status`, `type`, `created`. Plans are written to a global user plans directory (`~/.claude/rules/docs/plans/`) that aggregates work from many different repos. Once a plan lives there, its originating repository is not recoverable from the file alone — the filename and contents may reference paths, but nothing identifies the repo by name.
+The current [plan-mode.md](../rules/plan-mode.md) rule requires three frontmatter fields on every plan: `status`, `type`, `created`. Plans are written to a global user plans directory (`~/.claude/rules/docs/plans/`) that aggregates work from many different repos. Once a plan lives there, its originating repository is not recoverable from the file alone — the filename and contents may reference paths, but nothing identifies the repo by name.
 
 The user wants `repo-name` added to the required frontmatter so each plan is self-identifying about which repo it belongs to.
 
 ## Objective
 
-Update [plan-mode.md](../../plan-mode.md) (and the matching skeleton in [reference/SKELETON.md](../../reference/SKELETON.md)) so every plan's YAML frontmatter is required to include a `repo-name` field, derived from the git remote when available and falling back to the cwd basename otherwise.
+Update [plan-mode.md](../rules/plan-mode.md) (and the matching skeleton in [reference/SKELETON.md](../reference/SKELETON.md)) so every plan's YAML frontmatter is required to include a `repo-name` field, derived from the git remote when available and falling back to the cwd basename otherwise.
 
 ## Files to modify
 
-- [/Users/shawnsandy/.claude/rules/plan-mode.md](../../plan-mode.md) — update the Frontmatter step under **Workflow** to require `repo-name` and specify how it is resolved.
-- [/Users/shawnsandy/.claude/rules/reference/SKELETON.md](../../reference/SKELETON.md) — the skeleton does not currently include frontmatter; add a minimal frontmatter block at the top so new plans inherit all four required fields (`status`, `type`, `created`, `repo-name`).
+- [/Users/shawnsandy/.claude/rules/plan-mode.md](../rules/plan-mode.md) — update the Frontmatter step under **Workflow** to require `repo-name` and specify how it is resolved.
+- [/Users/shawnsandy/.claude/rules/reference/SKELETON.md](../reference/SKELETON.md) — the skeleton does not currently include frontmatter; add a minimal frontmatter block at the top so new plans inherit all four required fields (`status`, `type`, `created`, `repo-name`).
 
 ## Steps
 
 1. **Edit the Frontmatter step (Workflow §2) in `plan-mode.md`** to list `repo-name` alongside `status`, `type`, `created`, and add a short clause on resolution: use `basename` of the `origin` git remote URL (strip a trailing `.git`); if no remote exists, fall back to the basename of the current working directory.
    - *Why:* Makes `repo-name` a first-class required field with a single unambiguous resolution rule, so authors and any plan-generating skill agree on the value.
-   - *Verify:* Re-read [plan-mode.md](../../plan-mode.md) and confirm step 2 of Workflow now names four fields (`status`, `type`, `created`, `repo-name`) and includes the remote-then-cwd resolution clause.
+   - *Verify:* Re-read [plan-mode.md](../rules/plan-mode.md) and confirm step 2 of Workflow now names four fields (`status`, `type`, `created`, `repo-name`) and includes the remote-then-cwd resolution clause.
 
 2. **Add a frontmatter block to the top of `reference/SKELETON.md`** containing all four required fields with placeholder values (`status: todo`, `type: <feature|fix|refactor|docs|chore>`, `created: YYYY-MM-DD`, `repo-name: <repo-name>`).
    - *Why:* The skeleton is copied as the starter for every new plan; without the frontmatter block here, authors who copy the skeleton will keep producing plans missing the new field.
-   - *Verify:* Open [reference/SKELETON.md](../../reference/SKELETON.md) and confirm the file now begins with a `---` block listing the four fields, before the `# Plan: <title>` heading.
+   - *Verify:* Open [reference/SKELETON.md](../reference/SKELETON.md) and confirm the file now begins with a `---` block listing the four fields, before the `# Plan: <title>` heading.
 
 ## Acceptance Criteria
 
@@ -42,8 +42,8 @@ Update [plan-mode.md](../../plan-mode.md) (and the matching skeleton in [referen
 
 ## Verification
 
-- Open [plan-mode.md](../../plan-mode.md) and read Workflow §2 — it must require four fields and describe the resolution rule.
-- Open [reference/SKELETON.md](../../reference/SKELETON.md) — it must start with a `---` frontmatter block containing the four fields above the `# Plan: <title>` heading.
+- Open [plan-mode.md](../rules/plan-mode.md) and read Workflow §2 — it must require four fields and describe the resolution rule.
+- Open [reference/SKELETON.md](../reference/SKELETON.md) — it must start with a `---` frontmatter block containing the four fields above the `# Plan: <title>` heading.
 - Mentally draft a new plan against the updated rule from scratch: copying the skeleton should produce a file whose frontmatter already has all four required fields, needing only value substitution.
 - Confirm this plan file's own frontmatter contains `repo-name: rules` (derived from the cwd `/Users/shawnsandy/.claude/rules` since this directory has no git remote), demonstrating the fallback path works.
 

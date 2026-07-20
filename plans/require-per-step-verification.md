@@ -2,17 +2,17 @@
 
 ## Context
 
-The current [plan-mode.md](../../plan-mode.md) rule defines each step in a plan's `<ol>` as "a single, testable action with a brief *why*." It also defines a top-level `verification` section that covers the whole plan.
+The current [plan-mode.md](../rules/plan-mode.md) rule defines each step in a plan's `<ol>` as "a single, testable action with a brief *why*." It also defines a top-level `verification` section that covers the whole plan.
 
 There is no requirement for each individual step to state how to confirm that step succeeded. In practice this means a plan's per-step "why" can drift away from being checkable — leaving plan-level verification to carry the entire load. The user wants per-step verification to be mandatory so each step is self-validating before moving on.
 
 ## Objective
 
-Update [plan-mode.md](../../plan-mode.md) so the `steps` section requires every `<li>` to include a verification — i.e. each step must specify how to confirm it succeeded, not just what to do and why.
+Update [plan-mode.md](../rules/plan-mode.md) so the `steps` section requires every `<li>` to include a verification — i.e. each step must specify how to confirm it succeeded, not just what to do and why.
 
 ## Files to modify
 
-- [/Users/shawnsandy/.claude/rules/plan-mode.md](../../plan-mode.md) — single file, single bullet under the **Required Structure** section.
+- [/Users/shawnsandy/.claude/rules/plan-mode.md](../rules/plan-mode.md) — single file, single bullet under the **Required Structure** section.
 
 ## Steps
 
@@ -24,7 +24,7 @@ Update [plan-mode.md](../../plan-mode.md) so the `steps` section requires every 
 
 ## Verification
 
-- Open [plan-mode.md](../../plan-mode.md) and confirm:
+- Open [plan-mode.md](../rules/plan-mode.md) and confirm:
   - The `steps` bullet under **Required Structure** explicitly requires a verification per step.
   - The top-level `verification` bullet remains unchanged in intent (end-to-end confirmation).
   - No other sections (Workflow, File Format, Writing Style, Scope Discipline) are altered.

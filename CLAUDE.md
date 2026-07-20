@@ -1,63 +1,49 @@
 # CLAUDE.md — Global Instructions
 
-Project-specific `CLAUDE.md` and `./.claude/rules/` **override** these global instructions when they conflict. Check both before acting on unfamiliar projects.
-
-## Search Exclusions
-
-- Never include `*/plans/archive` (any depth) in file searches, glob patterns, or exploratory reads. Skip it unless the user explicitly targets it by path.
+Project `CLAUDE.md` and `./.claude/rules/` **override** these rules on conflict — check both in
+unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 
 ## Working Style
 
 - No emojis in generated markdown.
-- Never autonomously start additional work after completing a requested task.
+- Never start additional work after completing the requested task.
 - Never expand scope beyond the specified file or target.
-- When asked a question. Treat questions as exploration, not approval: answer or ask back, never implement.
+- Treat questions as exploration, not approval — answer or ask back, never implement.
+- Never search, glob, or read `*/plans/archive` (any depth) unless the user names the path.
 
-## Git & PRs
+## Git
 
-- Unless otherwise specified, always pull the latest of the default branch from origin before starting any work.
-- Commit ALL modified files in a single commit unless explicitly told otherwise — do not leave uncommitted files requiring a second prompt.
-- Confirm not on a protected branch before committing.
-- Check if a feature branch is already merged before creating a PR.
-- Follow the project's commit message conventions; reference relevant issues/tickets.
-- Update docs and changelogs when creating a PR.
-- Execute git operations directly — do not enter plan mode for git commands.
-- `git-agent` skills (`branch-agent`, `commit-agent`, `pr-agent`, `ship`) self-bootstrap out of plan mode via their own Step 0 (`ExitPlanMode`). Callers do not pre-check plan-mode state.
+- Pull the latest default branch from origin before starting work, unless told otherwise.
+- Commit ALL modified files in a single commit unless told otherwise — never leave a remainder
+  that needs a second prompt.
+- Check whether a feature branch is already merged before opening a PR.
+- Update docs and changelogs when opening a PR.
+- Execute git operations directly — never enter plan mode for git.
+- Never delete a branch, run `rm`/`mktemp`/`git clean`, or execute other destructive commands
+  without explicit approval. "Merge it" does NOT authorize `--delete-branch`.
+- `git-agent` skills (`branch-agent`, `commit-agent`, `pr-agent`, `ship`) exit plan mode via their
+  own Step 0. Callers do not pre-check plan-mode state.
 
-## Git & Safety
+## Before Opening a PR
 
-- Never delete a branch, run rm/mktemp/git clean, or execute other destructive commands without explicit user approval. "Merge it" does NOT authorize `--delete-branch`.
+- Run the full test suite and lint/type checks locally; do not rely on CI reviewers to catch
+  regressions.
+- Verify UI changes in-browser in both light and dark themes; add srcset/responsive checks for any
+  image change.
+
+## Generated Files
+
+- Produce generated files (galleries, plugin tables, migrations) with the repo's canonical
+  generator script. Never hand-edit generated output or write an ad-hoc parser.
 
 ## Workflow
 
-- When porting or referencing an existing fix, first confirm whether it has already landed on main (check merged PRs) before declaring it missing or re-implementing.
-
-## Generated Files / Build
-
-- Always use the repository's canonical generator/source-of-truth scripts to produce generated files (galleries, plugin tables, migrations); never hand-edit generated output or write ad-hoc parsing scripts.
-
-## Verification
-
-- After making a change, verify it in-browser across both light and dark themes before opening a PR, and add srcset/responsive checks for any image changes.
-- Run the full test suite and lint/type checks locally before opening a PR; do not rely on CI reviewers to catch regressions.
+- Before porting or re-implementing a fix, confirm it has not already landed on main — check
+  merged PRs.
+- Establish root cause before writing code: use DevTools, database queries, or runtime inspection
+  to observe actual state. Do not guess iteratively.
+- In plan mode, never implement until the user explicitly approves the plan.
 
 ## Response Style
 
-- Keep tool/agent responses concise and under output token limits; summarize instead of dumping large content.
-
-## Planning
-
-When in plan mode, never implement until the user explicitly approves the plan.
-
-## Debugging
-
-Investigate root cause first — use Chrome DevTools, database queries, or runtime inspection to understand actual state before writing code. Do not guess iteratively.
-
-## Skills
-
-- **graphify** (`~/.claude/skills/graphify/SKILL.md`) — any input to knowledge graph. Trigger: `/graphify`
-  When the user types `/graphify`, invoke the Skill tool with `skill: "graphify"` before doing anything else.
-
-## Tips
-
-- Press `#` during any session to have Claude auto-incorporate session learnings into CLAUDE.md.
+- Keep responses concise and under output token limits; summarize rather than dump.

@@ -44,4 +44,4 @@ Direct, imperative, developer-friendly — real names (file paths, function name
 
 ## Skeleton
 
-Copy `reference/SKELETON.md` as a starter for every new plan.
+Copy `~/.claude/reference/SKELETON.md` as a starter for every new plan. Read it when authoring a plan — it is not loaded into context automatically.
