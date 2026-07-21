@@ -200,7 +200,8 @@
     "claude-api@anthropic-agent-skills": true,
     "artifact-tools@agentics-kit": true,
     "team-defaults@agentics-kit": true,
-    "chrome-devtools-mcp@chrome-devtools-plugins": true
+    "chrome-devtools-mcp@chrome-devtools-plugins": true,
+    "content-tools@agentics-kit": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
