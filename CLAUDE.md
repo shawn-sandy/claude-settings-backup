@@ -20,7 +20,8 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - Update docs and changelogs when opening a PR.
 - Execute git operations directly — never enter plan mode for git.
 - Never delete a branch, run `rm`/`mktemp`/`git clean`, or execute other destructive commands
-  without explicit approval. "Merge it" does NOT authorize `--delete-branch`.
+  without explicit approval. "Merge it" does NOT authorize `--delete-branch`. To clean up a
+  worktree, `cd` out of it first, then `git worktree remove` + `git branch -d` — never `rm -rf`.
 - `git-agent` skills (`branch-agent`, `commit-agent`, `pr-agent`, `ship`) exit plan mode via their
   own Step 0. Callers do not pre-check plan-mode state.
 
@@ -30,6 +31,14 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
   regressions.
 - Verify UI changes in-browser in both light and dark themes; add srcset/responsive checks for any
   image change.
+- Report measured computed values, not screenshots alone — screenshots have come back blank.
+- If verification is blocked, say so explicitly. Never mark a plan complete on unverified work.
+
+## Tests You Write
+
+- Every assertion must fail if the behaviour regresses. No tautologies, no assertions locked to
+  exact wording.
+- Clean up any temp directories the tests create.
 
 ## Generated Files
 
