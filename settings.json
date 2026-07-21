@@ -173,7 +173,6 @@
     "code-review@agentics-kit": true,
     "code-testing-agent@agentics-kit": true,
     "git-agent@agentics-kit": true,
-    "plan-interview@agentics-kit": true,
     "skill-reviewer@agentics-kit": true,
     "wcag-compliance-reviewer@agentics-kit": true,
     "memory-tools@agentics-kit": true,
