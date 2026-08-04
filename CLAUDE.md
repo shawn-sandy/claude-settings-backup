@@ -8,6 +8,9 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - No emojis in generated markdown.
 - Never start additional work after completing the requested task.
 - Never expand scope beyond the specified file or target.
+- Never make fixes unrelated to the requested change — no drive-by cleanups, no fixing adjacent
+  bugs, no reformatting untouched code. Being inside a file is not permission to fix other things
+  in it. Mention unrelated problems in one line; do not edit them.
 - Treat questions as exploration, not approval — answer or ask back, never implement.
 - Never search, glob, or read `*/plans/archive` (any depth) unless the user names the path.
 
