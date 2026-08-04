@@ -179,7 +179,6 @@
     "code-review@claude-code-plugins": false,
     "security-guidance@claude-code-plugins": false,
     "impeccable@impeccable": true,
-    "product-plans@agentics-kit": false,
     "settings-sync@agentics-kit": true,
     "code-share@agentics-kit": false,
     "plan-agent@agentics-kit": true,
