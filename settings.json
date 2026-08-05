@@ -99,6 +99,11 @@
             "type": "command",
             "command": "INPUT=$(cat); if echo \"$INPUT\" | jq -r '.tool_input.command' 2>/dev/null | grep -q 'npm publish'; then BRANCH=$(git branch --show-current 2>/dev/null); if [ \"$BRANCH\" = 'main' ] || [ \"$BRANCH\" = 'primary' ] || [ \"$BRANCH\" = 'master' ]; then echo \"WARNING: Do not publish from the $BRANCH branch. Use a release branch.\" >&2; exit 1; fi; NPM_USER=$(npm whoami 2>&1); if echo \"$NPM_USER\" | grep -qi 'error\\|unauthorized\\|ENEEDAUTH'; then echo \"ERROR: npm auth failed ($NPM_USER). Run npm login first.\" >&2; exit 1; fi; echo \"npm auth OK as $NPM_USER, branch OK.\"; fi",
             "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "python3 $HOME/.claude/hooks/review-push-gate.py",
+            "timeout": 5
           }
         ]
       }
