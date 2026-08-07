@@ -79,9 +79,6 @@
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"gitlens.views.remotes.branches.layout": "list",
-	"[nunjucks]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
 	"git.enableSmartCommit": true,
 	"editor.stickyScroll.enabled": true,
 	"javascript.preferences.quoteStyle": "double",
