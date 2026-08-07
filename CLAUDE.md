@@ -22,19 +22,46 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - Check whether a feature branch is already merged before opening a PR.
 - Update docs and changelogs when opening a PR.
 - Execute git operations directly — never enter plan mode for git.
+- Never merge a PR without explicit approval in the current turn. Green CI, an approving review,
+  and "open a PR" are not merge authorization — report readiness, ask, wait.
 - Never delete a branch, run `rm`/`mktemp`/`git clean`, or execute other destructive commands
   without explicit approval. "Merge it" does NOT authorize `--delete-branch`. To clean up a
   worktree, `cd` out of it first, then `git worktree remove` + `git branch -d` — never `rm -rf`.
 - `git-agent` skills (`branch-agent`, `commit-agent`, `pr-agent`, `ship`) exit plan mode via their
   own Step 0. Callers do not pre-check plan-mode state.
 
+## CI Failures
+
+- GitHub Actions is frequently billing-blocked on this account. Red CI is not evidence of a code
+  defect until proven otherwise.
+- Read the failure first (`gh run view --log-failed`): a billing/quota block fails every job in
+  seconds with no test output. Report it as a billing block; do not "fix" the code.
+
+## Code Review
+
+- Never resolve a review thread you have not read end to end, including every reply. Later replies
+  routinely retract, narrow, or supersede the opening comment.
+- Never resolve a thread whose fix you did not verify landed in the pushed diff.
+
+## Shell Commands
+
+- Background and detached forms (`&`, `nohup`, `disown`) and chained `cd x && y` are
+  permission-blocked — they will fail, not prompt.
+- Write the sequence to a driver script in the scratchpad directory and run that one script, or use
+  the tool's own `run_in_background` flag.
+
+## UI Changes
+
+- Verify every UI change in a live browser before committing, not before opening the PR. Load the
+  page, exercise the change, check both light and dark themes.
+- Evidence means measured values — computed styles, element boxes, console/network output. A
+  screenshot alone is not evidence; screenshots have come back blank.
+- Add srcset/responsive checks for any image change.
+
 ## Before Opening a PR
 
 - Run the full test suite and lint/type checks locally; do not rely on CI reviewers to catch
   regressions.
-- Verify UI changes in-browser in both light and dark themes; add srcset/responsive checks for any
-  image change.
-- Report measured computed values, not screenshots alone — screenshots have come back blank.
 - If verification is blocked, say so explicitly. Never mark a plan complete on unverified work.
 
 ## Tests You Write
@@ -42,6 +69,13 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - Every assertion must fail if the behaviour regresses. No tautologies, no assertions locked to
   exact wording.
 - Clean up any temp directories the tests create.
+
+## Plan and Artifact Filenames
+
+- Before naming a new plan or artifact file, read the checks in
+  `~/.claude/hooks/validate-plan-filename.py` — it exits 2 on a violation.
+- Match all of them: strict kebab-case, first token in its `IMPERATIVE_VERBS` set, no stop-word
+  second token, no trailing hex or `-YYYY-MM-DD` suffix, no generic name.
 
 ## Generated Files
 
