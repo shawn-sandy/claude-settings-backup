@@ -61,6 +61,33 @@ def contributed_keys(package_json_paths):
     return keys
 
 
+def language_ids(package_json_paths):
+    """Union of every language id declared by contributes.languages."""
+    ids = set()
+    for p in package_json_paths:
+        try:
+            with open(p, encoding='utf-8') as fh:
+                data = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        for lang in data.get('contributes', {}).get('languages', []) or []:
+            if lang.get('id'):
+                ids.add(lang['id'])
+    return ids
+
+
+def dead_language_blocks(keys, langs):
+    """[lang] blocks whose language id nothing registers.
+
+    A `[foo]` block only ever applies if some extension declares `foo` as a
+    language id -- otherwise the whole block is unreachable and its settings
+    silently do nothing, exactly like a dangling defaultFormatter one level up.
+    Reported, never pruned: an uninstalled language extension is a likely cause,
+    and the block still carries the user's intent for when it is installed.
+    """
+    return [k for k in keys if LANG_BLOCK.match(k) and k[1:-1] not in langs]
+
+
 def classify(key, live, core):
     """Verdict for one settings key. Only ORPHAN is ever pruned."""
     if LANG_BLOCK.match(key):
@@ -76,11 +103,19 @@ def classify(key, live, core):
     return 'ORPHAN'
 
 
+def _bundled_pkgs():
+    return [p for p in glob.glob(os.path.join(BUNDLED, '*', 'package.json'))
+            if os.path.basename(os.path.dirname(p)) not in BUNDLED_STUBS]
+
+
 def bundled_keys():
     """Settings contributed by VS Code's own extensions, minus marketplace stubs."""
-    return contributed_keys(
-        p for p in glob.glob(os.path.join(BUNDLED, '*', 'package.json'))
-        if os.path.basename(os.path.dirname(p)) not in BUNDLED_STUBS)
+    return contributed_keys(_bundled_pkgs())
+
+
+def bundled_languages():
+    """Language ids registered by VS Code's own extensions, minus stubs."""
+    return language_ids(_bundled_pkgs())
 
 
 def resolve_profile(name):
@@ -135,11 +170,18 @@ def main():
 
     live = contributed_keys(ext_pkgs)
     core = bundled_keys()
+    langs = bundled_languages() | language_ids(ext_pkgs)
+
+    dead_langs = dead_language_blocks(settings, langs)
 
     orphans, dangling = [], []
     for key, val in settings.items():
         verdict = classify(key, live, core)
         if verdict == 'LANG':
+            # A block for a language nothing registers cannot dangle in any
+            # meaningful way -- skip it so --apply never edits it.
+            if key in dead_langs:
+                continue
             fmt = val.get('editor.defaultFormatter') if isinstance(val, dict) else None
             if fmt and fmt.lower() not in installed_lower and not fmt.startswith('vscode.'):
                 dangling.append((key, fmt))
@@ -154,7 +196,8 @@ def main():
     print(f'parsed as : {"strict JSON" if strict else "JSONC (comments/trailing commas)"}')
     print(f'extensions: {len(installed)} listed, {len(installed) - len(unresolved)} '
           f'resolved on disk, {len(live)} contributed keys')
-    print(f'keys      : {len(settings)} total, {len(orphans)} orphaned\n')
+    print(f'keys      : {len(settings)} total, {len(orphans)} orphaned, '
+          f'{len(dead_langs)} dead [language] block(s)\n')
 
     if unresolved:
         print(f'!! {len(unresolved)} listed extension(s) have no folder under {EXT_DIR}.')
@@ -173,6 +216,12 @@ def main():
     for k, fmt in dangling or []:
         print(f'  {k} -> {fmt} (not installed)')
     if not dangling:
+        print('  none')
+
+    print('\n--- DEAD [language] blocks (no extension registers the id) ---')
+    for k in dead_langs or []:
+        print(f'  {k} -> install a {k[1:-1]} language extension, or drop the block')
+    if not dead_langs:
         print('  none')
 
     print('\n--- UNRESOLVABLE applyToAllProfiles refs ---')

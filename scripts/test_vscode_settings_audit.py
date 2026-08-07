@@ -4,7 +4,7 @@
 Guards the classification rules that decide what --apply deletes. Every assert
 here corresponds to a way the audit was observed to go wrong on real data.
 """
-import importlib.util, os, sys
+import glob, importlib.util, json, os, shutil, sys, tempfile
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _spec = importlib.util.spec_from_file_location(
@@ -56,6 +56,45 @@ def main():
     # Regression: prefix matching must not treat a hyphenated sibling as covered.
     # 'github.copilot' + '.' does not match 'github.copilot-labs.*'.
     assert c('github.copilot-labs.showBrushesLenses') == 'ORPHAN'
+
+    # A [lang] block only applies if something registers that language id.
+    # '[nunjucks]' sat in settings for months formatting nothing.
+    keys = ['[mdx]', '[nunjucks]', '[css]', 'editor.formatOnSave']
+    assert audit.dead_language_blocks(keys, {'mdx', 'css'}) == ['[nunjucks]']
+
+    # Regression: a dead block must never be pruned -- it still carries intent
+    # for whenever the language extension gets installed. LANG, not ORPHAN.
+    assert c('[nunjucks]') == 'LANG'
+
+    # language_ids parses the shape it is given. A declaration with no id, or a
+    # package.json with no languages at all, must not blow up or leak a None.
+    tmp = tempfile.mkdtemp()
+    try:
+        for name, body in (
+            ('good', {'contributes': {'languages': [{'id': 'mdx'}, {'no': 'id'}]}}),
+            ('none', {'contributes': {'configuration': {'properties': {}}}}),
+            ('junk', None),  # written as invalid JSON below
+        ):
+            os.makedirs(os.path.join(tmp, name))
+            p = os.path.join(tmp, name, 'package.json')
+            with open(p, 'w', encoding='utf-8') as fh:
+                fh.write('{not json' if body is None else json.dumps(body))
+        found = audit.language_ids(glob.glob(os.path.join(tmp, '*', 'package.json')))
+        assert found == {'mdx'}, f'expected exactly mdx, got {found!r}'
+    finally:
+        shutil.rmtree(tmp)
+
+    # Bundled language discovery works at all -- if language_ids ever returns
+    # nothing, every [lang] block in settings reads as dead and the report is
+    # noise. 'markdown' is bundled; 'mdx' only ever comes from a marketplace
+    # extension, so its absence proves BUNDLED points where it should.
+    #
+    # Note: BUNDLED_STUBS is currently a no-op for languages -- the copilot stub
+    # declares only 'ignore' and 'markdown', both declared elsewhere too. The
+    # filter stays for symmetry with bundled_keys, where it does matter.
+    bundled = audit.bundled_languages()
+    assert 'markdown' in bundled, 'bundled language discovery returned nothing useful'
+    assert 'mdx' not in bundled, 'BUNDLED is resolving to the wrong extensions dir'
 
     print(f'ok - {main.__doc__ or "all classification checks passed"}')
 
