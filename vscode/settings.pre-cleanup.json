@@ -1,0 +1,586 @@
+{
+	"files.autoSave": "onFocusChange",
+	"diffEditor.renderSideBySide": false,
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"GitLive.Issue tracker integration": "Disabled",
+	"editor.inlineSuggest.enabled": true,
+	"markdownlint.customRules": [
+		"{docsmsft.docs-linting}/markdownlint-custom-rules/rules.js"
+	],
+	"markdownlint.config": {
+		"MD028": false,
+		"MD025": {
+			"front_matter_title": ""
+		}
+	},
+	"git.autofetch": true,
+	"conventionalCommits.emojiFormat": "emoji",
+	"conventionalCommits.lineBreak": "\\",
+	"conventionalCommits.showEditor": true,
+	"editor.wordWrap": "wordWrapColumn",
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"markdown-checkboxes.label": true,
+	"prettier.proseWrap": "always",
+	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+		"editor.lineNumbers": "on"
+	},
+	"remote.SSH.remotePlatform": {
+		"shawn-sandy.guides-next-js.main.csb": "linux",
+		"sandbox.2l9hrx.csb": "linux",
+		"sandbox.jn5n3s.csb": "linux"
+	},
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": true,
+		"markdown": true,
+		"scminput": false,
+		"yaml": false
+	},
+	"terminal.integrated.defaultProfile.osx": "zsh",
+	"npm.keybindingsChangedWarningShown": true,
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"codemetrics.basics.ComplexityLevelExtreme": 40,
+	"codemetrics.basics.ComplexityLevelHigh": 25,
+	"codemetrics.basics.ComplexityLevelLow": 5,
+	"codemetrics.basics.ComplexityLevelNormal": 15,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"cSpell.userWords": [
+		"ACSS",
+		"Astro",
+		"Astrodocs",
+		"astrojs",
+		"astrokit",
+		"autodocs",
+		"AUTOINCREMENT",
+		"badass",
+		"chooseproduct",
+		"FPKIT",
+		"frontmatter",
+		"gettext",
+		"glab",
+		"graphify",
+		"keystatic",
+		"libsql",
+		"Multistep",
+		"nanostores",
+		"nextjs",
+		"nextra",
+		"Openlayout",
+		"opusplan",
+		"setis",
+		"shawnsandy",
+		"ssandy",
+		"storyshots",
+		"styl",
+		"subcomponent",
+		"subcomponents",
+		"SUPABASE",
+		"tilg",
+		"treeshake",
+		"tsup",
+		"TURSO",
+		"unhover",
+		"WCAG",
+		"wspc",
+		"zeffy"
+	],
+	"yaml.schemas": {
+		"file:///Users/shawnsandy/.vscode/extensions/docsmsft.docs-yaml-1.0.6/dist/toc.schema.json": "/toc\\.yml/i"
+	},
+	"commit-message-editor.staticTemplate": [
+		"feat: Short description",
+		"",
+		"Message body",
+		"",
+		"Message footer"
+	],
+	"commit-message-editor.dynamicTemplate": [
+		"{type}{scope}: {description}",
+		"",
+		"{body}",
+		"",
+		"{breaking_change}{footer}"
+	],
+	"commit-message-editor.tokens": [
+		{
+			"label": "Type",
+			"name": "type",
+			"type": "enum",
+			"options": [
+				{
+					"label": "---",
+					"value": ""
+				},
+				{
+					"label": "build",
+					"description": "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
+				},
+				{
+					"label": "chore",
+					"description": "Updating grunt tasks etc; no production code change"
+				},
+				{
+					"label": "ci",
+					"description": "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)"
+				},
+				{
+					"label": "docs",
+					"description": "Documentation only changes"
+				},
+				{
+					"label": "feat",
+					"description": "A new feature"
+				},
+				{
+					"label": "fix",
+					"description": "A bug fix"
+				},
+				{
+					"label": "perf",
+					"description": "A code change that improves performance"
+				},
+				{
+					"label": "refactor",
+					"description": "A code change that neither fixes a bug nor adds a feature"
+				},
+				{
+					"label": "revert"
+				},
+				{
+					"label": "style",
+					"description": "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+				},
+				{
+					"label": "test",
+					"description": "Adding missing tests or correcting existing tests"
+				}
+			],
+			"description": "Type of changes"
+		},
+		{
+			"label": "Scope",
+			"name": "scope",
+			"description": "A scope may be provided to a commit’s type, to provide additional contextual information and is contained within parenthesis, e.g., \"feat(parser): add ability to parse arrays\".",
+			"type": "text",
+			"multiline": false,
+			"prefix": "(",
+			"suffix": ")"
+		},
+		{
+			"label": "Short description",
+			"name": "description",
+			"description": "Short description in the subject line.",
+			"type": "text",
+			"multiline": false
+		},
+		{
+			"label": "Body",
+			"name": "body",
+			"description": "Optional body",
+			"type": "text",
+			"multiline": true,
+			"lines": 5,
+			"maxLines": 10
+		},
+		{
+			"label": "Breaking change",
+			"name": "breaking_change",
+			"type": "boolean",
+			"value": "BREAKING CHANGE: ",
+			"default": false
+		},
+		{
+			"label": "Footer",
+			"name": "footer",
+			"description": "Optional footer",
+			"type": "text",
+			"multiline": true
+		},
+		{
+			"label": "feat",
+			"name": "feature",
+			"type": "text"
+		}
+	],
+	"commit-message-editor.view.fullWidth": true,
+	"commit-message-editor.view.saveAndClose": true,
+	"redhat.telemetry.enabled": true,
+	"footsteps.highlightColorMaxOpacity": 0.2,
+	"footsteps.maxNumberOfChangesToRemember": 12,
+	"git.confirmSync": false,
+	"editor.linkedEditing": true,
+	"workbench.editorAssociations": {
+		"*.mdx": "default",
+		"git-rebase-todo": "gitlens.rebase"
+	},
+	"git.suggestSmartCommit": true,
+	"gitlens.views.worktrees.files.layout": "list",
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"totalTypeScript.hiddenTips": [
+		"typing-function-parameters",
+		"optional-object-property",
+		"ts-object-type",
+		"basic-types",
+		"tuple-type",
+		"interface-declaration",
+		"function-return-type",
+		"variable-type-annotation",
+		"typeof",
+		"type-alias-declaration",
+		"type-alias-with-generics",
+		"type-alias-with-multiple-generics",
+		"keyof",
+		"passing-generics-to-types",
+		"generic-slots-in-functions",
+		"union-type",
+		"literal-type",
+		"any-type",
+		"pick-utility-type",
+		"array-type",
+		"partial-utility-type",
+		"as-assertion",
+		"undefined-keyword",
+		"omit-utility-type",
+		"non-null-expression",
+		"null-keyword",
+		"as-const",
+		"as-const-on-object",
+		"never-keyword",
+		"record-utility-type",
+		"mapped-type"
+	],
+	"totalTypeScript.hideAllTips": false,
+	"totalTypeScript.hideBasicTips": false,
+	"gitlens.views.remotes.branches.layout": "list",
+	"[nunjucks]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"git.enableSmartCommit": true,
+	"editor.stickyScroll.enabled": true,
+	"[njk]": {
+		"editor.defaultFormatter": "eseom.nunjucks-template"
+	},
+	"terminal.integrated.env.osx": {},
+	"playwright.reuseBrowser": true,
+	"javascript.preferences.quoteStyle": "double",
+	"typescript.preferences.quoteStyle": "double",
+	"eslint.format.enable": true,
+	"conventionalCommits.editor.keepAfterSave": true,
+	"githubPullRequests.fileListLayout": "tree",
+	"autoHide.hideOnOpen": false,
+	"editor.minimap.maxColumn": 80,
+	"autoHide.autoHideSideBar": false,
+	"editor.minimap.size": "fit",
+	"editor.accessibilitySupport": "off",
+	"editor.minimap.renderCharacters": false,
+	"editor.minimap.showSlider": "always",
+	"figma.autocompleteBlocks": true,
+	"git.ignoredRepositories": [
+		"/Users/shawnsandy/.vscode/extensions/stepsize.stepsize-1.0.15/resources/demo-repository"
+	],
+	"codesandbox.currentWorkspace": "419cb300-9eda-425d-bbd0-d7352ade643c",
+	"cody.experimental.chatPredictions": true,
+	"cody.experimental.commandLenses": true,
+	"cody.experimental.editorTitleCommandIcon": true,
+	"editor.inlineSuggest.suppressSuggestions": true,
+	"githubPullRequests.pullBranch": "never",
+	"gitlens.graph.layout": "editor",
+	"gitlens.graph.minimap.additionalTypes": [
+		"localBranches"
+	],
+	"gitlens.views.commits.showBranchComparison": false,
+	"testExplorer.addToEditorContextMenu": true,
+	"testExplorer.hideEmptyLog": false,
+	"[yaml]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"git.terminalGitEditor": true,
+	"errorLens.enableOnDiffView": true,
+	"CodeGPT.apiKey": "CodeGPT Plus",
+	"CodeGPT.model": "CodeGPT Plus",
+	"workbench.colorCustomizations": {
+		"activityBar.background": "#41027D",
+		"titleBar.activeBackground": "#5C02AF",
+		"titleBar.activeForeground": "#FDFBFF"
+	},
+	"nxConsole.showNodeVersionOnStartup": false,
+	"gitlens.experimental.generateCommitMessagePrompt": "write commit message that follows convential commit specifications",
+	"workbench.settings.applyToAllProfiles": [
+		"gitlens.experimental.generateCommitMessagePrompt",
+		"gitlens.terminal.overrideGitEditor"
+	],
+	"gitlens.ai.experimental.openai.url": "",
+	"CodeGPT.Autocomplete.enabled": true,
+	"github.copilot-labs.showTestGenerationLenses": true,
+	"github.copilot-labs.showBrushesLenses": true,
+	"css.format.spaceAroundSelectorSeparator": true,
+	"workbench.tree.enableStickyScroll": true,
+	"gitlens.ai.experimental.provider": "openai",
+	"gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
+	"gitlens.rebaseEditor.showDetailsView": "open",
+	"git.mergeEditor": true,
+	"terminal.integrated.env.linux": {},
+	"cloudcode.autoDependencies": "off",
+	"cody.commandCodeLenses": true,
+	"eslint.lintTask.enable": true,
+	"eslint.ignoreUntitled": true,
+	"editor.formatOnType": true,
+	"pieces.setCopilotLocation": true,
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"console-ninja.output.showLogsOnlyFromOpenedFiles": true,
+	"console-ninja.output.showLogsFromMultipleRunningToolsTogether": true,
+	"console-ninja.captureFunctions": true,
+	"console-ninja.allowConsoleLogToTriggerPredictions": true,
+	"gitlens.gitCommands.skipConfirmations": [
+		"fetch:command",
+		"stash-push:command",
+		"switch:command"
+	],
+	"git.ignoreRebaseWarning": true,
+	"playwright.showTrace": false,
+	"[snippets]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"typescript.tsdk": "",
+	"continue.enableTabAutocomplete": true,
+	"extensions.autoUpdate": "on",
+	"prisma.showPrismaDataPlatformNotification": false,
+	"github.copilot.editor.enableAutoCompletions": true,
+	"[mdx]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[astro]": {
+		"editor.defaultFormatter": "astro-build.astro-vscode"
+	},
+	"workbench.editor.doubleClickTabToToggleEditorGroupSizes": "maximize",
+	"workbench.editor.pinnedTabsOnSeparateRow": true,
+	"npm.enableRunFromFolder": true,
+	"githubPullRequests.createOnPublishBranch": "never",
+	"gitlens.views.scm.grouped.views": {
+		"commits": true,
+		"branches": true,
+		"remotes": true,
+		"stashes": true,
+		"tags": true,
+		"worktrees": true,
+		"contributors": true,
+		"repositories": true,
+		"searchAndCompare": false,
+		"launchpad": false
+	},
+	"autoHide.autoHidePanel": false,
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"chat.editing.alwaysSaveWithGeneratedChanges": true,
+	"eslint.run": "onSave",
+	"errorLens.codeLensEnabled": true,
+	"geminicodeassist.inlineSuggestions.enableAuto": false,
+	"geminicodeassist.project": "api-project-464562385724",
+	"github.copilot.nextEditSuggestions.enabled": true,
+	"chat.promptFiles": true,
+	"cody.autocomplete.completeSuggestWidgetSelection": false,
+	"cody.suggestions.mode": "off",
+	"github.copilot.selectedCompletionModel": "gpt-4o-copilot",
+	"github.copilot.chat.codesearch.enabled": true,
+	"github.copilot.chat.newWorkspaceCreation.enabled": true,
+	"github.copilot.chat.codeGeneration.instructions": [
+		{
+			"text": "Always add a comment: 'Generated by Copilot'."
+		},
+		{
+			"text": "In TypeScript always use underscore for private field names."
+		},
+		{
+			"text": "In TypeScript always use camelCase for public field names."
+		},
+		{
+			"text": "Always use arrow functions for React components."
+		},
+		{
+			"text": "Always use functional components for React components."
+		},
+		{
+			"text": "Always use the latest version of React."
+		},
+		{
+			"text": "Always use the latest version of TypeScript."
+		},
+		{
+			"text": "Always use the latest version of Node.js."
+		},
+		{
+			"text": "Always use the latest version of npm."
+		}
+	],
+	"github.copilot.chat.commitMessageGeneration.instructions": [
+		{
+			"text": "Always write commit messages in the conventional commits format. Write an extremely detailed list of the file changes and the reason for the change in the commit message description."
+		},
+		{
+			"text": "Always add a scope to the commit message."
+		},
+		{
+			"text": "add a footer with a list of all the files changed in the commit."
+		}
+	],
+	"github.copilot.chat.reviewSelection.instructions": [
+		{
+			"text": "Check for adherence to coding standards and best practices."
+		},
+		{
+			"text": "Ensure that the code is maintainable and easy to understand."
+		},
+		{
+			"text": "Check for performance optimizations and potential bottlenecks."
+		},
+		{
+			"text": "Verify that the code is properly tested and has sufficient test coverage."
+		},
+		{
+			"text": "Review the code for security vulnerabilities and performance issues."
+		},
+		{
+			"text": "Check for code style and formatting issues."
+		},
+		{
+			"text": "Ensure that the code is well-documented and follows best practices."
+		},
+		{
+			"text": "Check for potential bugs and edge cases."
+		}
+	],
+	"github.copilot.chat.testGeneration.instructions": [
+		{
+			"text": "Always use Vitest for testing React components."
+		},
+		{
+			"text": "Use Vitest for testing JavaScript code."
+		},
+		{
+			"text": "Use React Testing Library for testing React components."
+		},
+		{
+			"text": "Use Playwright for end-to-end testing."
+		},
+		{
+			"text": "Use Mock Service Worker (MSW) for mocking API requests."
+		}
+	],
+	"github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+		{
+			"text": "Include a summary of the pull request changes."
+		},
+		{
+			"text": "Mention any related issues or tickets."
+		},
+		{
+			"text": "Include a checklist of items to be reviewed."
+		},
+		{
+			"text": "Include a list of any breaking changes."
+		},
+		{
+			"text": "Include a list of any new dependencies."
+		},
+		{
+			"text": "Include a list of any deprecated features."
+		},
+		{
+			"text": "Include a list of any performance improvements."
+		},
+		{
+			"text": "Include a list of any security improvements."
+		}
+	],
+	"terminal.integrated.suggest.enabled": true,
+	"gitlens.advanced.messages": {
+		"suppressIntegrationRequestTimedOutWarning": true
+	},
+	"chat.mcp.discovery.enabled": {
+		"claude-desktop": true,
+		"windsurf": true,
+		"cursor-global": true,
+		"cursor-workspace": true
+	},
+	"codestream.serverUrl": "https://codestream-api-v2-us1.service.newrelic.com",
+	"amp.url": "https://ampcode.com/",
+	"markdownlint.run": "onSave",
+	"chat.editor.wordWrap": "on",
+	"githubPullRequests.codingAgent.uiIntegration": true,
+	"diffEditor.codeLens": true,
+	"chat.todoListTool.enabled": true,
+	"geminicodeassist.displayInlineContextHint": false,
+	"[dockercompose]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+		"editor.autoIndent": "advanced",
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": false,
+			"strings": true
+		},
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"[github-actions-workflow]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"chat.mcp.gallery.enabled": true,
+	"amp.mcpServers": {
+		"deepsearch": {
+			"url": "http://localhost:50208/.api/mcp/deepsearch",
+			"type": "http"
+		},
+		"a11y-mcp": {
+			"url": "http://localhost:50204/a11y-mcp/mcp",
+			"type": "http"
+		},
+		"design-system-mcp": {
+			"url": "http://localhost:50205/design-system-mcp/mcp",
+			"type": "http"
+		}
+	},
+	"claude-code.useTerminal": true,
+	"console-ninja.featureSet": "Pro",
+	"claudeCode.initialPermissionMode": "plan",
+	"claudeCode.respectGitIgnore": false,
+	"gitlens.ai.model": "vscode",
+	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
+	"security.promptForLocalFileProtocolHandling": false,
+	"autoHide.autoHideAuxiliaryBar": false,
+	"claudeCode.selectedModel": "sonnet",
+	"chat.viewSessions.orientation": "stacked",
+	"claudeCode.preferredLocation": "panel",
+	"claudeCode.useTerminal": true,
+	"python.analysis.typeCheckingMode": "basic",
+	"claudeCode.enableNewConversationShortcut": true,
+	"claudeCode.environmentVariables": [],
+	"coderabbit.agentType": "Claude Code Extension",
+	"coderabbit.autoReviewMode": "disabled",
+	"workbench.colorTheme": "Night Owl",
+	"window.newWindowProfile": "Agentic"
+}

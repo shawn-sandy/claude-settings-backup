@@ -1,0 +1,195 @@
+{
+	"files.autoSave": "onFocusChange",
+	"diffEditor.renderSideBySide": false,
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.inlineSuggest.enabled": true,
+	"git.autofetch": true,
+	"editor.wordWrap": "wordWrapColumn",
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"prettier.proseWrap": "always",
+	"[markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.lineNumbers": "on"
+	},
+	"terminal.integrated.defaultProfile.osx": "zsh",
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"cSpell.userWords": [
+		"ACSS",
+		"Astro",
+		"Astrodocs",
+		"astrojs",
+		"astrokit",
+		"autodocs",
+		"AUTOINCREMENT",
+		"badass",
+		"chooseproduct",
+		"FPKIT",
+		"frontmatter",
+		"gettext",
+		"glab",
+		"graphify",
+		"keystatic",
+		"libsql",
+		"Multistep",
+		"nanostores",
+		"nextjs",
+		"nextra",
+		"Openlayout",
+		"opusplan",
+		"setis",
+		"shawnsandy",
+		"ssandy",
+		"storyshots",
+		"styl",
+		"subcomponent",
+		"subcomponents",
+		"SUPABASE",
+		"tilg",
+		"treeshake",
+		"tsup",
+		"TURSO",
+		"unhover",
+		"WCAG",
+		"wspc",
+		"zeffy"
+	],
+	"git.confirmSync": false,
+	"editor.linkedEditing": true,
+	"workbench.editorAssociations": {
+		"*.mdx": "default",
+		"git-rebase-todo": "gitlens.rebase"
+	},
+	"git.suggestSmartCommit": true,
+	"gitlens.views.worktrees.files.layout": "list",
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"gitlens.views.remotes.branches.layout": "list",
+	"[nunjucks]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"git.enableSmartCommit": true,
+	"editor.stickyScroll.enabled": true,
+	"javascript.preferences.quoteStyle": "double",
+	"typescript.preferences.quoteStyle": "double",
+	"eslint.format.enable": true,
+	"editor.minimap.maxColumn": 80,
+	"editor.minimap.size": "fit",
+	"editor.accessibilitySupport": "off",
+	"editor.minimap.renderCharacters": false,
+	"editor.minimap.showSlider": "always",
+	"editor.inlineSuggest.suppressSuggestions": true,
+	"gitlens.graph.layout": "editor",
+	"gitlens.graph.minimap.additionalTypes": [
+		"localBranches"
+	],
+	"gitlens.views.commits.showBranchComparison": false,
+	"git.terminalGitEditor": true,
+	"errorLens.enableOnDiffView": true,
+	"workbench.colorCustomizations": {
+		"activityBar.background": "#41027D",
+		"titleBar.activeBackground": "#5C02AF",
+		"titleBar.activeForeground": "#FDFBFF"
+	},
+	"css.format.spaceAroundSelectorSeparator": true,
+	"workbench.tree.enableStickyScroll": true,
+	"git.mergeEditor": true,
+	"eslint.lintTask.enable": true,
+	"eslint.ignoreUntitled": true,
+	"editor.formatOnType": true,
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"gitlens.gitCommands.skipConfirmations": [
+		"fetch:command",
+		"stash-push:command",
+		"switch:command"
+	],
+	"git.ignoreRebaseWarning": true,
+	"[snippets]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"extensions.autoUpdate": "on",
+	"[mdx]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[astro]": {
+		"editor.defaultFormatter": "astro-build.astro-vscode"
+	},
+	"workbench.editor.doubleClickTabToToggleEditorGroupSizes": "maximize",
+	"workbench.editor.pinnedTabsOnSeparateRow": true,
+	"npm.enableRunFromFolder": true,
+	"gitlens.views.scm.grouped.views": {
+		"commits": true,
+		"branches": true,
+		"remotes": true,
+		"stashes": true,
+		"tags": true,
+		"worktrees": true,
+		"contributors": true,
+		"repositories": true,
+		"searchAndCompare": false,
+		"launchpad": false
+	},
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"chat.editing.alwaysSaveWithGeneratedChanges": true,
+	"eslint.run": "onSave",
+	"errorLens.codeLensEnabled": true,
+	"chat.promptFiles": true,
+	"terminal.integrated.suggest.enabled": true,
+	"gitlens.advanced.messages": {
+		"suppressIntegrationRequestTimedOutWarning": true
+	},
+	"chat.mcp.discovery.enabled": {
+		"claude-desktop": true,
+		"windsurf": true,
+		"cursor-global": true,
+		"cursor-workspace": true
+	},
+	"chat.editor.wordWrap": "on",
+	"diffEditor.codeLens": true,
+	"chat.todoListTool.enabled": true,
+	"[dockercompose]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+		"editor.autoIndent": "advanced",
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": false,
+			"strings": true
+		}
+	},
+	"chat.mcp.gallery.enabled": true,
+	"claudeCode.initialPermissionMode": "plan",
+	"claudeCode.respectGitIgnore": false,
+	"security.promptForLocalFileProtocolHandling": false,
+	"chat.viewSessions.orientation": "stacked",
+	"claudeCode.preferredLocation": "panel",
+	"claudeCode.useTerminal": true,
+	"claudeCode.enableNewConversationShortcut": true,
+	"workbench.colorTheme": "Night Owl",
+	"window.newWindowProfile": "Agentic",
+	"gitlens.ai.enabled": false
+}
