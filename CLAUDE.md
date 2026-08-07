@@ -69,6 +69,14 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - Every assertion must fail if the behaviour regresses. No tautologies, no assertions locked to
   exact wording.
 - Clean up any temp directories the tests create.
+- Default stack unless the project says otherwise: Vitest as the runner (React and plain JS),
+  React Testing Library for components, Playwright for end-to-end, MSW for mocking API requests.
+
+## Code Conventions
+
+- React components: arrow functions, function components. No class components.
+- TypeScript: `_underscore` prefix for private fields, `camelCase` for public fields.
+- Prefer double quotes in JS/TS — matches the `quoteStyle` settings in the VS Code config.
 
 ## Plan and Artifact Filenames
 
