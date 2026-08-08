@@ -265,8 +265,9 @@
     },
     "paper": {
       "source": {
-        "source": "github",
-        "repo": "paper-design/agent-plugins"
+        "source": "git",
+        "repo": "paper-design/agent-plugins",
+        "url": "https://github.com/paper-design/agent-plugins.git"
       }
     }
   },
