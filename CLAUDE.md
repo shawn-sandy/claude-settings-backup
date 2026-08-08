@@ -71,7 +71,7 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
   exact wording.
 - Clean up any temp directories the tests create.
 - Default stack unless the project says otherwise: Vitest as the runner (React and plain JS),
-  React Testing Library for components, Playwright for end-to-end, MSW for mocking API requests.
+  React Testing Library for components.
 
 ## Code Conventions
 
