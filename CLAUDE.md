@@ -45,10 +45,11 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 
 ## Shell Commands
 
-- Background and detached forms (`&`, `nohup`, `disown`) and chained `cd x && y` are
-  permission-blocked — they will fail, not prompt.
-- Write the sequence to a driver script in the scratchpad directory and run that one script, or use
-  the tool's own `run_in_background` flag.
+- Use the Bash tool's `run_in_background` flag instead of `&`/`nohup`/`disown` — it survives across
+  turns and reports exit status; `&` detaches from the harness. Foreground `sleep` is blocked.
+- `cd x && y` may prompt and its cwd does not persist — prefer absolute paths, or write the
+  sequence to one driver script in the scratchpad and run that.
+- `curl` and `rm` are denied outright — use WebFetch for fetches.
 
 ## UI Changes
 
