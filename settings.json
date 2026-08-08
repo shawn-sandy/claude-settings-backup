@@ -203,7 +203,8 @@
     "artifact-tools@agentics-kit": true,
     "team-defaults@agentics-kit": false,
     "chrome-devtools-mcp@chrome-devtools-plugins": false,
-    "content-tools@agentics-kit": true
+    "content-tools@agentics-kit": true,
+    "paper-desktop@paper": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -260,6 +261,12 @@
       "source": {
         "source": "github",
         "repo": "ChromeDevTools/chrome-devtools-mcp"
+      }
+    },
+    "paper": {
+      "source": {
+        "source": "github",
+        "repo": "paper-design/agent-plugins"
       }
     }
   },
