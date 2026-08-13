@@ -204,7 +204,8 @@
     "team-defaults@agentics-kit": false,
     "chrome-devtools-mcp@chrome-devtools-plugins": false,
     "content-tools@agentics-kit": true,
-    "paper-desktop@paper": true
+    "paper-desktop@paper": true,
+    "skills@shawn-sandy": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -266,8 +267,13 @@
     "paper": {
       "source": {
         "source": "git",
-        "repo": "paper-design/agent-plugins",
         "url": "https://github.com/paper-design/agent-plugins.git"
+      }
+    },
+    "shawn-sandy": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/shawnsandy/devbox/skills/.claude/worktrees/plugin-marketplace-compat-d85dae"
       }
     }
   },
