@@ -17,6 +17,15 @@ When an automated code-review bot (CodeRabbit, a `claude-review` GitHub Action, 
 
 Automated reviewers have no memory between runs. Every push triggers a fresh re-review, so the bot resurfaces declined or stale findings each round and repeats its prior opinion against a slightly different commit. Treating a review template's "Please address the feedback and push a fix" line as if every finding were blocking creates an iteration loop: in one observed case a bot ran 12 rounds, still firing after it had already said "ready to merge" by round 8. Each polish round on a planning/docs PR can burn output tokens equal to the entire original deliverable — the loop cost roughly an order of magnitude more than the work it was reviewing.
 
+## Triage
+
+Every finding lands in exactly one bucket. Classify first, act second. Report the
+bucketed list before making any edits.
+
+- **Genuine defect** — reproduce it before fixing it, and fix it only if the Hard default allows: it blocks merge, or the user asked. A real defect that blocks nothing is still reported, not pushed. A fix written from the description alone is a guess, and a guess that happens to compile reads exactly like a real fix. Note the reproduction in the commit body.
+- **Incorrect claim** — verify against the actual source, schema, or spec before accepting it. A blocking-shaped claim is not automatically true; bots assert confidently about APIs they have not read. This is the bucket that looks identical to the one above until you check, so check before writing any fix.
+- **Nitpick** — style, preference, no behaviour change. Non-blocking by default: report it to the user with a one-line reason and move on.
+
 ## How to apply
 
 - Distinguish **review fires** (automatic re-runs on push) from **review concerns** (new blocking issues). A re-fired review on an already-approved PR is not new information — it is the same opinion against a slightly different commit.
@@ -24,4 +33,5 @@ Automated reviewers have no memory between runs. Every push triggers a fresh re-
 - After 1–2 rounds of substantive fixes, if the verdict is "approve with X," "LGTM otherwise," or "ready to merge," surface the choice to the user explicitly: _"the bot will keep firing on every push — want to merge now or keep polishing?"_ Do not keep iterating silently.
 - Treat informational notes, "polish" suggestions, and Wish List items as non-blocking by default.
 - Do not rebut stale-state findings in long reply threads — that wastes tokens on something the bot will not remember next round. Push the fix or merge.
+- Replies are for humans, not bots. A bot forgets between runs, so rebutting one is waste. Post a reply only when a person will read the thread or a false claim is blocking merge — then keep it to a single line of evidence. Everything else goes in the report to the user, not on the PR.
 - Token cost matters: each polish round can consume output tokens equal to the entire deliverable. Once merged, surface the merge URL and stop.

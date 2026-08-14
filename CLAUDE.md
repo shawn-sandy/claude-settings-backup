@@ -46,8 +46,9 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - Pre-flight before any ship or merge skill: confirm `gh auth status` succeeds, the working tree is
   clean, and — for a merge — that a PR already exists. Report blockers verbatim and stop; do not
   attempt workarounds or guess at a re-auth.
-- Review-bot triage is governed by `~/.claude/rules/review-bot-loops.md`: fix genuine defects,
-  decline nitpicks with a one-line reason, and never treat a re-fired review as a new instruction.
+- Review-bot triage is governed by `~/.claude/rules/review-bot-loops.md`: verify a claim before
+  fixing it, report declined nitpicks to you rather than replying on the PR, and never treat a
+  re-fired review as a new instruction.
 
 ## CI Failures
 
