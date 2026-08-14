@@ -80,9 +80,13 @@
       "Read(*.env)",
       "Read(*/plans/archive/*)",
       "Bash(rm:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(git clean:*)",
+      "Bash(git stash pop)"
     ],
-    "ask": [],
+    "ask": [
+      "Bash(git checkout -- *)"
+    ],
     "defaultMode": "auto"
   },
   "hooks": {
