@@ -14,6 +14,15 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - Treat questions as exploration, not approval — answer or ask back, never implement.
 - Never search, glob, or read `*/plans/archive` (any depth) unless the user names the path.
 
+## Verification
+
+- Never verify rendered output with `grep` against source files or CSS selectors. Verify against the
+  *rendered* artifact — built HTML, live DOM, computed styles — using Playwright or the browser MCP.
+- If neither is available, say `UNVERIFIED — no browser` explicitly. Never substitute a source-level
+  grep and report it as verification.
+- Any contrast ratio, measurement, or computed metric written into docs or comments must come from an
+  actual tool run. Never estimate.
+
 ## Git
 
 - Pull the latest default branch from origin before starting work, unless told otherwise.
@@ -27,8 +36,18 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - Never delete a branch, run `rm`/`mktemp`/`git clean`, or execute other destructive commands
   without explicit approval. "Merge it" does NOT authorize `--delete-branch`. To clean up a
   worktree, `cd` out of it first, then `git worktree remove` + `git branch -d` — never `rm -rf`.
+- Never run bare `git stash pop`. List `git stash list` first and pop by explicit index — a bare pop
+  has restored an unrelated stash and created conflicts.
 - `git-agent` skills (`branch-agent`, `commit-agent`, `pr-agent`, `ship`) exit plan mode via their
   own Step 0. Callers do not pre-check plan-mode state.
+
+## Ship / PR Workflow
+
+- Pre-flight before any ship or merge skill: confirm `gh auth status` succeeds, the working tree is
+  clean, and — for a merge — that a PR already exists. Report blockers verbatim and stop; do not
+  attempt workarounds or guess at a re-auth.
+- Review-bot triage is governed by `~/.claude/rules/review-bot-loops.md`: fix genuine defects,
+  decline nitpicks with a one-line reason, and never treat a re-fired review as a new instruction.
 
 ## CI Failures
 
@@ -78,6 +97,13 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - React components: arrow functions, function components. No class components.
 - TypeScript: `_underscore` prefix for private fields, `camelCase` for public fields.
 - Prefer double quotes in JS/TS — matches the `quoteStyle` settings in the VS Code config.
+
+## Formatting & Scope
+
+- Never run repo-wide formatters or codemods (`npm run fix:all`, `prettier --write .`, bulk `sass`
+  rebuilds). Format only the files you touched: `npx prettier --write <files>`.
+- If a repo-wide fix genuinely seems necessary, ask first. A formatter that rewrites hundreds of
+  untouched files buries the real diff and needs a guarded revert.
 
 ## Plan and Artifact Filenames
 

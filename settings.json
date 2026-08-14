@@ -104,6 +104,11 @@
             "type": "command",
             "command": "python3 $HOME/.claude/hooks/review-push-gate.py",
             "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "python3 $HOME/.claude/hooks/block-repo-wide-format.py",
+            "timeout": 5
           }
         ]
       }
@@ -274,6 +279,12 @@
       "source": {
         "source": "github",
         "repo": "shawn-sandy/skills"
+      }
+    },
+    "remotion": {
+      "source": {
+        "source": "github",
+        "repo": "remotion-dev/claude-code-plugin"
       }
     }
   },
