@@ -191,7 +191,7 @@
     "playwright@claude-plugins-official": true,
     "style-agent@agentic-acss-plugins": true,
     "code-review@claude-code-plugins": false,
-    "security-guidance@claude-code-plugins": false,
+    "security-guidance@claude-code-plugins": true,
     "impeccable@impeccable": true,
     "settings-sync@agentics-kit": true,
     "code-share@agentics-kit": false,
