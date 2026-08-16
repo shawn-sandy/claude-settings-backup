@@ -46,9 +46,7 @@
       "WebSearch",
       "WebFetch(domain:claudefa.st)",
       "WebFetch(domain:docs.anthropic.com)",
-      "Bash(python3 *)",
       "Bash(git checkout *)",
-      "Bash(bash *)",
       "Bash(gh pr *)",
       "Skill(product-plans:plan-review-agents)",
       "Bash(git fetch *)",
@@ -307,6 +305,41 @@
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(npm run fix:all)",
+      "Bash(npx prettier --write .)",
+      "Bash(git push --force*)"
+    ],
+    "environment": [
+      "### Org-wide",
+      "**Organization**: None configured",
+      "**Primary use of Claude Code**: software development",
+      "**Cloud provider(s)**: Supabase, Turso, Netlify (per .env.example / package.json deploy scripts)",
+      "**Repository visibility**: private (shawn-sandy/513, confirmed via gh)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: CI secrets referenced by name only (CLAUDE_CODE_OAUTH_TOKEN, E2E_CLERK_PUBLISHABLE_KEY, E2E_CLERK_SECRET_KEY, E2E_CLERK_USER_USERNAME, E2E_SUPABASE_ANON_KEY, E2E_SUPABASE_SERVICE_ROLE_KEY, E2E_SUPABASE_URL, GITHUB_TOKEN) — no values seen; local secrets live in .env/.env.local/.env.production/.env.backup (gitignored)",
+      "**Default / protected branches**: primary (default branch); ruleset \"production\" exists but is disabled; no classic protected branches listed — treat primary as sensitive given the disabled-but-present production ruleset",
+      "**CI/CD deploy targets**: Netlify (deploy:preview, deploy:prod, pages:publish scripts); GitHub Actions workflows present",
+      "**Network posture**: None configured",
+      "**Source control**: The trusted repo (shawn-sandy/513) and its origin remote only, as scoped by Repository visibility above",
+      "**Trusted internal domains**: None configured",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: Clerk (auth), Supabase (primary DB/RLS), Turso (secondary DB), Axiom (logging, per .env.example)",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: .env, .env.local, .env.production, .env.backup (credentials); docs/planning/order-management-rbac.md, docs/planning/order-rbac-test-coverage.md, docs/planning/order-rbac-test-suggestions.md, tests/api/orders/rbac.integration.test.ts (RBAC/access-control design — internal-audience only); Supabase service-role key is explicitly flagged in .env.example as bypassing RLS and restricted to tests/scripts, never app middleware or client-reachable code",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace/host/container carrying `prod` or `production` as a whole word/segment — includes the `production` ruleset on this repo's default branch and Netlify's deploy:prod / pages:publish targets",
+      "**Protected deployment namespaces / environments**: production (Netlify deploy:prod target; repo ruleset named \"production\")",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment — includes the RBAC planning docs and rbac.integration.test.ts noted above",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development on the SERVE513 (astro-basics) codebase",
+      "**Trusted repo**: /Users/shawnsandy/devbox/513 working tree (this checkout, including its worktrees) and its origin remote https://github.com/shawn-sandy/513.git — private, so confidential material is fine to commit here; secrets are still never cleared into the repo by visibility alone",
+      "**Org-specific CLIs**: None configured",
+      "routine under this repo's `.claude/` and `src/` prefixes for development, doc, and rule-file edits"
+    ]
+  },
   "voiceEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754075223053
