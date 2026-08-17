@@ -10,7 +10,10 @@ repo-name: <repo-name>
 
 ## Context
 
-<why this work is needed>
+<why this work is needed, and what a reader with no prior context requires to
+act — relevant files, prior decisions, constraints. No follow-up question
+should be necessary, including from a future session after context is
+cleared.>
 
 ## Objective
 
