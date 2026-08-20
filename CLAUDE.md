@@ -87,6 +87,9 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 
 - Run the full test suite and lint/type checks locally; do not rely on CI reviewers to catch
   regressions.
+- Run a fresh-context adversarial review of `git diff <default-branch>...HEAD` (code-review agent
+  when available) and fix confirmed defects before opening the PR — review bots should find
+  nothing. Hunt especially: no-op edits, vacuous assertions, self-introduced regressions.
 - If verification is blocked, say so explicitly. Never mark a plan complete on unverified work.
 
 ## Tests You Write
