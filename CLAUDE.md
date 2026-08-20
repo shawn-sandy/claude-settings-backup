@@ -22,6 +22,8 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
   grep and report it as verification.
 - Any contrast ratio, measurement, or computed metric written into docs or comments must come from an
   actual tool run. Never estimate.
+- In a git worktree, confirm the dev server you are verifying against serves *that* worktree's
+  checkout — check the port and cwd. Verifying against the main checkout invalidates the run.
 
 ## Git
 
@@ -38,6 +40,8 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
   worktree, `cd` out of it first, then `git worktree remove` + `git branch -d` — never `rm -rf`.
 - Never run bare `git stash pop`. List `git stash list` first and pop by explicit index — a bare pop
   has restored an unrelated stash and created conflicts.
+- Never use `git stash` to isolate changes — use a scratch branch or `git worktree` instead. Run
+  `git status` and `git stash list` before any stash operation.
 - `git-agent` skills (`branch-agent`, `commit-agent`, `pr-agent`, `ship`) exit plan mode via their
   own Step 0. Callers do not pre-check plan-mode state.
 
@@ -90,6 +94,8 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - Every assertion must fail if the behaviour regresses. No tautologies, no assertions locked to
   exact wording.
 - Clean up any temp directories the tests create.
+- Prove every regression test is load-bearing: confirm it fails against the pre-fix code before
+  committing.
 - Default stack unless the project says otherwise: Vitest as the runner (React and plain JS),
   React Testing Library for components.
 
@@ -125,6 +131,8 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - Establish root cause before writing code: use DevTools, database queries, or runtime inspection
   to observe actual state. Do not guess iteratively.
 - In plan mode, never implement until the user explicitly approves the plan.
+- When asked for a plan, proposal, or implementation doc, write the spec only. Create or edit
+  implementation files only after explicit approval — in or out of plan mode.
 
 ## Response Style
 
