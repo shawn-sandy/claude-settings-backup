@@ -20,6 +20,7 @@ All projects build user interfaces with modular components, bottom-up: start wit
 - **Compose, don't duplicate.** Assemble larger UI from existing smaller components. Reach for an existing primitive before writing a new one.
 - **Isolation first.** Every component must be buildable and viewable in isolation (Storybook, a preview route, or a test harness) — independent of the screen that uses it.
 - **Props are the contract.** Keep props explicit and typed; pass data down, emit events up. No hidden coupling to global state a component doesn't own.
+- **Checkpoint the approach on interactive behaviour.** For search, live filtering, sorting, pagination, or anything that reacts as the user types, propose two implementations before writing code — one of which must avoid a full-page reload or navigation. Give the tradeoffs in a few bullets each, say which you'd pick, and wait. A coarse first pass here costs a full rewrite, not an edit.
 
 ## Why
 

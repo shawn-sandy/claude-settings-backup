@@ -22,6 +22,12 @@ Automated reviewers have no memory between runs. Every push triggers a fresh re-
 Every finding lands in exactly one bucket. Classify first, act second. Report the
 bucketed list before making any edits.
 
+Run `git diff` and `git log` against the branch **first** and drop every finding
+already fixed in the working tree or an earlier commit. "Apply all N findings"
+means the unapplied ones — re-verifying work that is already committed burns a
+full pass and has, on its own, introduced layout regressions. Say which findings
+you skipped as already-applied.
+
 - **Genuine defect** — reproduce it before fixing it, and fix it only if the Hard default allows: it blocks merge, or the user asked. A real defect that blocks nothing is still reported, not pushed. A fix written from the description alone is a guess, and a guess that happens to compile reads exactly like a real fix. Note the reproduction in the commit body.
 - **Incorrect claim** — verify against the actual source, schema, or spec before accepting it. A blocking-shaped claim is not automatically true; bots assert confidently about APIs they have not read. This is the bucket that looks identical to the one above until you check, so check before writing any fix.
 - **Nitpick** — style, preference, no behaviour change. Non-blocking by default: report it to the user with a one-line reason and move on.

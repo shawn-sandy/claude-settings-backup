@@ -84,7 +84,9 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 ## UI Changes
 
 - Verify every UI change in a live browser before committing, not before opening the PR. Load the
-  page, exercise the change, check both light and dark themes.
+  page, exercise the change, check both light and dark themes, and re-check at a mobile width.
+- Run axe against the real page, not a Storybook iframe — navigate to the page first, then audit.
+  Auditing inside the iframe stalls and produces no result.
 - Evidence means measured values — computed styles, element boxes, console/network output. A
   screenshot alone is not evidence; screenshots have come back blank.
 - Add srcset/responsive checks for any image change.
@@ -96,6 +98,10 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - Run a fresh-context adversarial review of `git diff <default-branch>...HEAD` (code-review agent
   when available) and fix confirmed defects before opening the PR — review bots should find
   nothing. Hunt especially: no-op edits, vacuous assertions, self-introduced regressions.
+- Add these five to that review — each has shipped past self-review and been caught by a bot instead:
+  pagination/sort tie-breakers, unvalidated `parseInt`/`Number()` on user or query input, derived
+  state left stale after a client-side update (counts, links, labels), timezone-dependent date
+  anchors, and scripts that continue after a failed step. Add a regression test for each fix.
 - If verification is blocked, say so explicitly. Never mark a plan complete on unverified work.
 
 ## Tests You Write
