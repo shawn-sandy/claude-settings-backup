@@ -11,11 +11,17 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - Never make fixes unrelated to the requested change — no drive-by cleanups, no fixing adjacent
   bugs, no reformatting untouched code. Being inside a file is not permission to fix other things
   in it. Mention unrelated problems in one line; do not edit them.
+- Delete only what your own change orphaned — imports, variables, or functions your edit made
+  unused. Pre-existing dead code stays; mention it in one line.
 - Treat questions as exploration, not approval — answer or ask back, never implement.
+- State assumptions before implementing. If the request has two plausible readings that lead to
+  different work, name both and pick one out loud — never silently.
 - Never search, glob, or read `*/plans/archive` (any depth) unless the user names the path.
 
 ## Verification
 
+- Name the check that will prove the work correct before starting it, not after. If no check
+  exists, say so in one line and proceed under a stated assumption.
 - Never verify rendered output with `grep` against source files or CSS selectors. Verify against the
   *rendered* artifact — built HTML, live DOM, computed styles — using Playwright or the browser MCP.
 - If neither is available, say `UNVERIFIED — no browser` explicitly. Never substitute a source-level
@@ -97,8 +103,8 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - Every assertion must fail if the behaviour regresses. No tautologies, no assertions locked to
   exact wording.
 - Clean up any temp directories the tests create.
-- Prove every regression test is load-bearing: confirm it fails against the pre-fix code before
-  committing.
+- Write the regression test before the fix and watch it fail. If it was written after the fix,
+  revert the fix and confirm it fails before committing.
 - Default stack unless the project says otherwise: Vitest as the runner (React and plain JS),
   React Testing Library for components.
 
@@ -107,6 +113,8 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - React components: arrow functions, function components. No class components.
 - TypeScript: `_underscore` prefix for private fields, `camelCase` for public fields.
 - Prefer double quotes in JS/TS — matches the `quoteStyle` settings in the VS Code config.
+- When a file's local style differs from the conventions above, match the file. Mention the
+  mismatch; do not restyle it.
 
 ## Formatting & Scope
 
