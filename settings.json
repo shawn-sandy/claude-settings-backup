@@ -209,7 +209,8 @@
     "memory-tools@agentics-kit": true,
     "plan-agent@agentics-kit": true,
     "settings-sync@agentics-kit": true,
-    "skill-reviewer@agentics-kit": true
+    "skill-reviewer@agentics-kit": true,
+    "social-media-tools@agentics-kit": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
