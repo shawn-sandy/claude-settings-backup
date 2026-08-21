@@ -200,7 +200,8 @@
     "claude-api@anthropic-agent-skills": false,
     "chrome-devtools-mcp@chrome-devtools-plugins": false,
     "paper-desktop@paper": true,
-    "skills@shawn-sandy": true
+    "skills@shawn-sandy": true,
+    "artifact-tools@agentics-kit": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
