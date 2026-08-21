@@ -213,7 +213,8 @@
     "social-media-tools@agentics-kit": true,
     "team-defaults@agentics-kit": true,
     "wcag-compliance-reviewer@agentics-kit": true,
-    "discernment-nudge@anthropic-agent-skills": true
+    "discernment-nudge@anthropic-agent-skills": true,
+    "academy-guide@anthropic-agent-skills": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
