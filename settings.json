@@ -205,7 +205,8 @@
     "code-review@agentics-kit": true,
     "code-testing-agent@agentics-kit": true,
     "content-tools@agentics-kit": true,
-    "git-agent@agentics-kit": true
+    "git-agent@agentics-kit": true,
+    "memory-tools@agentics-kit": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
