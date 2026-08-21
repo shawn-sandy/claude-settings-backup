@@ -210,7 +210,8 @@
     "plan-agent@agentics-kit": true,
     "settings-sync@agentics-kit": true,
     "skill-reviewer@agentics-kit": true,
-    "social-media-tools@agentics-kit": true
+    "social-media-tools@agentics-kit": true,
+    "team-defaults@agentics-kit": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
