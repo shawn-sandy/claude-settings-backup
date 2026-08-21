@@ -202,7 +202,8 @@
     "paper-desktop@paper": true,
     "skills@shawn-sandy": true,
     "artifact-tools@agentics-kit": true,
-    "code-review@agentics-kit": true
+    "code-review@agentics-kit": true,
+    "code-testing-agent@agentics-kit": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
