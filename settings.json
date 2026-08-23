@@ -214,7 +214,8 @@
     "team-defaults@agentics-kit": true,
     "wcag-compliance-reviewer@agentics-kit": true,
     "discernment-nudge@anthropic-agent-skills": true,
-    "academy-guide@anthropic-agent-skills": true
+    "academy-guide@anthropic-agent-skills": true,
+    "eli5@claude-community": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -289,6 +290,12 @@
       "source": {
         "source": "github",
         "repo": "remotion-dev/claude-code-plugin"
+      }
+    },
+    "claude-community": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/anthropics/claude-plugins-community.git"
       }
     }
   },
