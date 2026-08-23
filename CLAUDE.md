@@ -75,6 +75,10 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
   auto-loads — read it before acting on any review-bot comment. Core rule: verify a claim before
   fixing it, report declined nitpicks to the user rather than replying on the PR, and never treat a
   re-fired review as a new instruction.
+- Post PR comments and review replies by writing the body to a scratchpad file, then
+  `gh pr comment N --body-file <path>` or `gh api ... -F body=@<path>` as a single-line command.
+  Never inline the body with `$(cat <<EOF)` and never prefix with `cd` or `export` — compound
+  commands defeat the permission allow rules and trigger prompts.
 
 ## Tests You Write
 
