@@ -298,6 +298,12 @@
         "source": "git",
         "url": "https://github.com/anthropics/claude-plugins-community.git"
       }
+    },
+    "agentic-cms": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/shawn-sandy/agent-cm.git"
+      }
     }
   },
   "outputStyle": "ELI5",
