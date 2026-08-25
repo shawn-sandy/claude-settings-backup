@@ -105,7 +105,7 @@
           },
           {
             "type": "command",
-            "command": "python3 $HOME/.claude/hooks/review-push-gate.py",
+            "command": "python3 $HOME/.claude/hooks/review-reply-gate.py",
             "timeout": 5
           },
           {
