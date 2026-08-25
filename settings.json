@@ -214,8 +214,6 @@
     "skill-reviewer@agentics-kit": true,
     "social-media-tools@agentics-kit": true,
     "wcag-compliance-reviewer@agentics-kit": true,
-    "discernment-nudge@anthropic-agent-skills": true,
-    "academy-guide@anthropic-agent-skills": true,
     "eli5@claude-community": true,
     "cm-agent@agentic-cms": true
   },
