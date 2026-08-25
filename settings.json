@@ -57,6 +57,7 @@
       "Bash(mv /tmp/mp.json /Users/shawnsandy/devbox/agentics/.claude-plugin/marketplace.json)",
       "Bash(command -v ToolSearch)",
       "Read(//Users/shawnsandy/.claude/**)",
+      "Edit(//Users/shawnsandy/.claude/hooks/**)",
       "WebFetch(domain:www.w3.org)",
       "Bash(open *)",
       "Bash(chmod +x /Users/shawnsandy/devbox/agentics/kit/plugins/plan-interview/skills/markdown-to-html/scripts/build-assets.sh)",
