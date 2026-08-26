@@ -84,8 +84,7 @@
       "Bash(git stash pop)"
     ],
     "ask": [
-      "Bash(git checkout -- *)",
-      "Bash(gh pr merge *)"
+      "Bash(git checkout -- *)"
     ],
     "defaultMode": "auto"
   },
