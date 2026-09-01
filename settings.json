@@ -214,7 +214,8 @@
     "social-media-tools@agentics-kit": true,
     "wcag-compliance-reviewer@agentics-kit": true,
     "eli5@claude-community": true,
-    "cm-agent@agentic-cms": true
+    "cm-agent@agentic-cms": true,
+    "academy-guide@anthropic-agent-skills": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
