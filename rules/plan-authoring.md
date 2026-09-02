@@ -41,9 +41,23 @@ Every plan must include:
 
 - `context` — Background and motivation; why this work is needed.
 - `objective` — One or two sentences summarising the goal.
-- `steps` — A numbered list where each item has three parts: the action, a brief *why*, and a
-  *verify* line stating how to confirm that step succeeded before moving on. Per-step verification
+- `steps` — A numbered list where each item has three parts: the action, a brief why, and a
+  verify stating how to confirm that step succeeded before moving on. Per-step verification
   is local; the top-level `verification` section covers end-to-end correctness.
+
+  **Write them in one line per step, with bare `Why:` and `Verify:` markers:**
+
+  ```markdown
+  1. Add the retry wrapper to src/fetch.ts. Why: the API 502s under load. Verify: `npm test -- retry` passes.
+  ```
+
+  This is the only form `plan-agent-render` parses — its matcher is
+  `^(.*?)\s+Why:\s+(.*?)\s+Verify:\s+(.*)$`. Italicised `*Why:*` / `*Verify:*`, or
+  the markers on their own lines, fail the render with
+  `step N is missing its "Why:" or "Verify:" part`. Keep each step to a single
+  item — the renderer folds continuation lines into the action before splitting,
+  so sub-bullets inside a step are flattened. Detail that needs structure belongs
+  in a section, not a step.
 - `tests` — Real application tests: actual test files written for the application or feature, run
   by the project's test runner, and committed to the codebase. Distinct from per-step verification
   and end-to-end verification, which are prose assertions inside the plan document. Two-tier depth:
@@ -85,6 +99,19 @@ Every plan must include:
 Direct, imperative, developer-friendly — real names (file paths, function names, CLI flags), lists
 over prose, one idea per item, explicitly scoped. Plan only what was requested; unsolicited ideas
 go in `next-steps`.
+
+## Rendering
+
+Plan HTML is generated, never hand-written. Author the `.md` spec and let the renderer produce
+the HTML:
+
+```bash
+plan-agent-render <plan>.md -o <plan>.html
+```
+
+To create a plan from scratch, invoke `/plan-agent:implementation-plan` rather than writing the
+spec freehand — it owns the section catalog, right-sizing, and the renderer's dialect. Exit 1
+prints exactly which section is missing or malformed.
 
 ## Skeleton
 

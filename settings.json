@@ -304,6 +304,12 @@
         "source": "git",
         "url": "https://github.com/shawn-sandy/agent-cm.git"
       }
+    },
+    "agent-ui-kit": {
+      "source": {
+        "source": "github",
+        "repo": "shawn-sandy/agent-ui-kit"
+      }
     }
   },
   "outputStyle": "ELI5",
