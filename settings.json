@@ -196,9 +196,6 @@
     "netlify-skills@claude-plugins-official": false,
     "ponytail@ponytail": true,
     "pr-review-toolkit@claude-code-plugins": false,
-    "document-skills@anthropic-agent-skills": false,
-    "example-skills@anthropic-agent-skills": false,
-    "claude-api@anthropic-agent-skills": false,
     "chrome-devtools-mcp@chrome-devtools-plugins": false,
     "paper-desktop@paper": true,
     "skills@shawn-sandy": true,
@@ -215,8 +212,7 @@
     "wcag-compliance-reviewer@agentics-kit": true,
     "eli5@claude-community": true,
     "cm-agent@agentic-cms": true,
-    "academy-guide@anthropic-agent-skills": true,
-    "discernment-nudge@anthropic-agent-skills": true
+    "agent-ui-kit@agent-ui-kit": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -309,7 +305,8 @@
       "source": {
         "source": "github",
         "repo": "shawn-sandy/agent-ui-kit"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "outputStyle": "ELI5",
