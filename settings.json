@@ -211,8 +211,7 @@
     "social-media-tools@agentics-kit": true,
     "wcag-compliance-reviewer@agentics-kit": true,
     "eli5@claude-community": true,
-    "cm-agent@agentic-cms": true,
-    "agent-ui-skills@agent-ui-kit": true
+    "cm-agent@agentic-cms": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -300,13 +299,6 @@
         "source": "git",
         "url": "https://github.com/shawn-sandy/agent-cm.git"
       }
-    },
-    "agent-ui-kit": {
-      "source": {
-        "source": "github",
-        "repo": "shawn-sandy/agent-ui-kit"
-      },
-      "autoUpdate": true
     }
   },
   "outputStyle": "ELI5",
