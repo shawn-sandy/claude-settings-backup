@@ -212,7 +212,7 @@
     "wcag-compliance-reviewer@agentics-kit": true,
     "eli5@claude-community": true,
     "cm-agent@agentic-cms": true,
-    "agent-ui-kit@agent-ui-kit": true
+    "agent-ui-skills@agent-ui-kit": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
