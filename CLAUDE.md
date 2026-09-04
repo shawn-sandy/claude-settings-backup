@@ -25,6 +25,15 @@ unfamiliar projects. Machine-specific overrides belong in `CLAUDE.local.md`.
 - In a git worktree, confirm the dev server you are verifying against serves *that* worktree's
   checkout — check the port and cwd. Verifying against the main checkout invalidates the run.
 - If verification is blocked, say so explicitly. Never mark a plan complete on unverified work.
+- A check counts as passed only when its output was actually observed. Suppressed stderr, a
+  trailing `|| true`, or a harness that exits 0 without running anything is unverified, not
+  green. Say which it is.
+
+## Skill Reference Files
+
+- Before implementing from a skill, check that its `references/` files are readable. If a read
+  is denied, say so up front, implement from the SKILL.md inline contract, and list which
+  details (styling, tokens, contrast) are unverified. Never guess silently.
 
 ## Shell Commands
 
